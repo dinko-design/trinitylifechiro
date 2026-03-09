@@ -1,0 +1,66 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Breadcrumbs from '@/components/Breadcrumbs.astro';
+---
+
+<BaseLayout
+  title="Careers | Trinity Life Chiropractic Allen TX"
+  description="Join the Trinity Life Chiropractic team in Allen, TX. We're looking for passionate individuals who share our mission to help families thrive through neurological wellness care."
+>
+  <Breadcrumbs items={[{ name: 'Home', href: '/' }, { name: 'Careers' }]} />
+
+  <div class="pt-24 min-h-screen bg-brand-cream/20">
+    <div class="bg-brand-plum text-white py-24 relative overflow-hidden">
+      <img src="https://images.unsplash.com/photo-1758654860024-9e352f70d1f9?ixlib=rb-4.1.0&q=80&w=1920&auto=format&fit=crop" alt="Team Meeting" class="absolute inset-0 w-full h-full object-cover opacity-10" />
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+        <h1 class="font-display text-4xl md:text-5xl font-bold mb-6 tracking-tight">Join Our Mission</h1>
+        <p class="text-xl text-white/70 max-w-2xl mx-auto">
+          We are always looking for passionate individuals to join our village and help families live life at 100%.
+        </p>
+      </div>
+    </div>
+
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+      <div class="text-center mb-16">
+        <h2 class="font-display text-3xl font-bold text-gray-900 mb-4 tracking-tight">Why Work With Us?</h2>
+        <p class="text-gray-600">At Trinity Life Chiropractic, we aren't just co-workers; we are a family. We value growth, compassion, and excellence.</p>
+      </div>
+
+      <div class="space-y-6">
+        <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+          <div class="flex justify-between items-start mb-4">
+            <div>
+              <h3 class="font-display text-xl font-bold text-gray-900">Chiropractic Assistant (CA)</h3>
+              <p class="text-brand-gold font-medium">Full-Time &bull; Allen, TX</p>
+            </div>
+            <span class="bg-green-100 text-green-800 text-xs px-3 py-1 rounded-full font-bold uppercase">Open</span>
+          </div>
+          <p class="text-gray-600 mb-6">We are looking for a high-energy, organized individual to be the face of our front office. You will manage patient flow, scheduling, and create a welcoming environment for our families.</p>
+          <a href="mailto:drobrien@trinitylifechiro.com?subject=CA%20Application" class="text-brand-plum font-bold hover:text-brand-gold flex items-center transition-colors">
+            Apply Now <span class="ml-2">&rarr;</span>
+          </a>
+        </div>
+
+        <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow opacity-75">
+          <div class="flex justify-between items-start mb-4">
+            <div>
+              <h3 class="font-display text-xl font-bold text-gray-900">Associate Chiropractor</h3>
+              <p class="text-brand-gold font-medium">Full-Time &bull; Allen, TX</p>
+            </div>
+            <span class="bg-gray-100 text-gray-600 text-xs px-3 py-1 rounded-full font-bold uppercase">Future Opening</span>
+          </div>
+          <p class="text-gray-600 mb-6">We are always connecting with talented doctors who share our vision for pediatric and family wellness. Reach out to start a conversation for future opportunities.</p>
+          <a href="mailto:drobrien@trinitylifechiro.com?subject=Associate%20DC%20Inquiry" class="text-gray-500 font-bold hover:text-gray-700 flex items-center transition-colors">
+            Learn More <span class="ml-2">&rarr;</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="mt-20 bg-brand-plum/5 rounded-3xl p-10 text-center">
+        <h3 class="font-display text-2xl font-bold text-gray-900 mb-4">Don't see your role?</h3>
+        <p class="text-gray-600 mb-8 max-w-lg mx-auto">We love meeting great people. If you think you'd be a perfect fit for our culture, send us your resume and tell us why.</p>
+        <a href="mailto:drobrien@trinitylifechiro.com" class="bg-brand-gold text-white px-8 py-3 rounded-full font-bold hover:bg-brand-gold-dark transition-colors inline-block">Email Us</a>
+      </div>
+    </div>
+  </div>
+</BaseLayout>

@@ -1,0 +1,157 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Breadcrumbs from '@/components/Breadcrumbs.astro';
+
+const locationPages = [
+  { city: 'Allen', state: 'TX', slug: '/chiropractor-allen-tx', driveTime: 'Home Base', distance: '0 mi', highlight: 'Our office is located here', description: 'As our home city, Allen is where it all happens. Our office at 301 N Allen Dr is centrally located and easy to find.', featured: true },
+  { city: 'McKinney', state: 'TX', slug: '/chiropractor-mckinney-tx', driveTime: '~10 min', distance: '~7 mi', highlight: '150+ families served', description: "McKinney families drive south on US-75 for specialized prenatal and pediatric care they can't find locally." },
+  { city: 'Plano', state: 'TX', slug: '/chiropractor-plano-tx', driveTime: '~15 min', distance: '~10 mi', highlight: '200+ families served', description: "Plano's discerning families choose Trinity Life for our unique neurological specialization and INSiGHT scans." },
+  { city: 'Fairview', state: 'TX', slug: '/chiropractor-fairview-tx', driveTime: '~5 min', distance: '~3 mi', highlight: 'Closest community', description: 'Our next-door neighbors in Fairview enjoy the shortest commute to specialized prenatal and pediatric care.' },
+  { city: 'Lucas', state: 'TX', slug: '/chiropractor-lucas-tx', driveTime: '~10 min', distance: '~5 mi', highlight: 'Active family care', description: 'Lucas families with active, outdoor lifestyles trust us for drug-free, neurological wellness care.' },
+  { city: 'Parker', state: 'TX', slug: '/chiropractor-parker-tx', driveTime: '~15 min', distance: '~8 mi', highlight: 'Natural health aligned', description: 'Parker families who value natural living find our drug-free, holistic approach to be a perfect match.' },
+  { city: 'Murphy', state: 'TX', slug: '/chiropractor-murphy-tx', driveTime: '~10 min', distance: '~6 mi', highlight: '80+ families served', description: "Murphy's young, growing families drive north for specialized infant and pediatric chiropractic care." },
+  { city: 'Frisco', state: 'TX', slug: '/chiropractor-frisco-tx', driveTime: '~15 min', distance: '~10 mi', highlight: '120+ families served', description: 'Frisco families seeking specialized neurological care beyond general chiropractic find it at Trinity Life.' },
+  { city: 'Richardson', state: 'TX', slug: '/chiropractor-richardson-tx', driveTime: '~20 min', distance: '~15 mi', highlight: 'Commuter-friendly', description: 'Richardson families and US-75 commuters access our specialized prenatal, pediatric, and family care.' },
+];
+
+const whyReasons = [
+  'Webster Technique certified for prenatal care — one of few in Collin County',
+  'Advanced pediatric training through the ICPA for gentle infant and child care',
+  'INSiGHT scanning technology for objective, data-driven nervous system assessment',
+  "Exclusive neurological focus — we don't do general pain management",
+  'Family-friendly village atmosphere with play area and nursing space',
+  'Trusted by 500+ families, midwives, doulas, and pediatricians across the region'
+];
+---
+
+<BaseLayout
+  title="Service Areas | Chiropractor Near Me | Trinity Life Chiropractic"
+  description="Trinity Life Chiropractic serves families across Collin County including Allen, McKinney, Plano, Frisco, Fairview, Lucas, Murphy, Parker, and Richardson, TX."
+>
+  <Breadcrumbs items={[{ name: 'Home', href: '/' }, { name: 'Service Areas' }]} />
+
+  <div class="pt-24 min-h-screen bg-white">
+    <!-- HERO -->
+    <div class="relative bg-brand-plum py-28 overflow-hidden">
+      <img src="https://images.unsplash.com/photo-1649692560786-27c52dd9ac1d?ixlib=rb-4.1.0&q=80&w=1920&auto=format&fit=crop" alt="North Texas Community" class="absolute inset-0 w-full h-full object-cover opacity-15" />
+      <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div class="flex items-center justify-center gap-2 mb-4">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-brand-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span class="text-brand-gold font-bold tracking-widest uppercase text-sm">Service Areas</span>
+        </div>
+        <h1 class="font-display text-4xl md:text-6xl font-bold text-white mb-6 tracking-tight">Serving Families Across Collin County</h1>
+        <p class="text-xl text-white/70 max-w-3xl mx-auto mb-10">
+          Trinity Life Chiropractic in Allen, TX is the trusted neurological chiropractic provider for families across North Texas.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="https://trinitylifechiro.janeapp.com" target="_blank" rel="noopener noreferrer" class="bg-brand-gold text-white px-8 py-4 rounded-full font-bold hover:bg-brand-gold-dark transition-colors shadow-lg inline-flex items-center justify-center gap-2">
+            Schedule Your Visit <span>&rarr;</span>
+          </a>
+          <a href="tel:2145097744" class="bg-white/10 backdrop-blur-md border border-white/20 text-white px-8 py-4 rounded-full font-bold hover:bg-white/20 transition-colors inline-flex items-center justify-center gap-2">
+            (214) 509-7744
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- INTRO -->
+    <section class="py-20 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div>
+            <h2 class="font-display text-3xl md:text-4xl font-bold text-brand-plum mb-6 tracking-tight">Your Family Chiropractor in Allen, Serving All of North Texas</h2>
+            <p class="text-lg text-gray-600 mb-6 leading-relaxed">Finding a chiropractor who truly specializes in prenatal and pediatric care is challenging. Dr. Colton O'Brien and his team at Trinity Life Chiropractic have built a reputation across Collin County as the go-to provider for neurologically focused family care.</p>
+            <p class="text-lg text-gray-600 mb-8 leading-relaxed">Located at 301 N Allen Dr in Allen, TX, our office is centrally positioned and easily accessible from McKinney, Plano, Frisco, Fairview, Lucas, Parker, Murphy, and Richardson.</p>
+            <div class="flex items-center gap-4">
+              <img src="/assets/023fbc767981ef2ecd3fbe4de658a30d5d662501.png" alt="Dr. Colton O'Brien" class="w-16 h-16 rounded-full object-cover border-2 border-brand-gold" loading="lazy" />
+              <div>
+                <p class="font-bold text-gray-900">Dr. Colton O'Brien, D.C.</p>
+                <p class="text-sm text-gray-500">Webster Technique Certified | ICPA Member</p>
+              </div>
+            </div>
+          </div>
+          <div class="relative h-[500px] rounded-3xl overflow-hidden shadow-2xl">
+            <iframe width="100%" height="100%" style="border:0" loading="lazy" src="https://maps.google.com/maps?q=301%20N%20Allen%20Dr%2C%20Allen%2C%20TX%2075013&t=&z=10&ie=UTF8&iwloc=&output=embed" title="Service Area Map"></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LOCATION GRID -->
+    <section class="py-20 bg-brand-cream/40">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <span class="text-brand-gold font-bold tracking-widest uppercase text-sm mb-2 block">Communities We Serve</span>
+          <h2 class="font-display text-3xl md:text-4xl font-bold text-brand-plum mb-4 tracking-tight">Chiropractic Care Near You</h2>
+          <p class="text-lg text-gray-600 max-w-3xl mx-auto">Click on your city below to learn about drive times, directions, and what families in your community are saying.</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {locationPages.map((location) => (
+            <a href={location.slug} class={`block group h-full rounded-2xl overflow-hidden border transition-all hover:shadow-xl ${location.featured ? 'bg-brand-plum text-white border-brand-plum' : 'bg-white border-gray-100 hover:border-brand-gold'}`}>
+              <div class="p-8">
+                <div class="flex items-start justify-between mb-4">
+                  <div class="flex items-center gap-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-brand-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                    <h3 class={`text-xl font-bold ${location.featured ? 'text-white' : 'text-gray-900'}`}>{location.city}, {location.state}</h3>
+                  </div>
+                  {location.featured && <span class="bg-brand-gold text-white text-xs font-bold px-3 py-1 rounded-full">HOME</span>}
+                </div>
+                <p class={`text-sm mb-4 leading-relaxed ${location.featured ? 'text-white/70' : 'text-gray-600'}`}>{location.description}</p>
+                <div class="flex items-center gap-4 mb-4">
+                  <span class={`text-sm font-bold ${location.featured ? 'text-white' : 'text-brand-plum'}`}>{location.driveTime}</span>
+                  <span class={`text-xs ${location.featured ? 'text-white/50' : 'text-gray-400'}`}>|</span>
+                  <span class={`text-sm ${location.featured ? 'text-white/50' : 'text-gray-500'}`}>{location.distance}</span>
+                </div>
+                <div class="flex items-center gap-2 text-sm text-brand-gold">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                  <span class="font-medium">{location.highlight}</span>
+                </div>
+                <div class={`mt-6 flex items-center gap-1 font-bold text-sm group-hover:gap-2 transition-all ${location.featured ? 'text-brand-gold' : 'text-brand-plum'}`}>
+                  View {location.city} Page <span>&rarr;</span>
+                </div>
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- WHY FAMILIES DRIVE TO US -->
+    <section class="py-20 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div class="relative rounded-3xl overflow-hidden shadow-2xl">
+            <img src="/assets/0042f13a153888e204d34c19f8fb2b1a8454b463.png" alt="Dr. Colton with family" class="w-full object-cover" loading="lazy" />
+          </div>
+          <div>
+            <span class="text-brand-gold font-bold tracking-widest uppercase text-sm mb-2 block">Our Difference</span>
+            <h2 class="font-display text-3xl md:text-4xl font-bold text-brand-plum mb-6 tracking-tight">Why Families Across North Texas Drive to Trinity Life</h2>
+            <p class="text-lg text-gray-600 mb-8 leading-relaxed">There are chiropractors in every city. So why do families from McKinney, Plano, Frisco, and beyond choose to drive to our Allen office? Because we offer something different.</p>
+            <div class="space-y-4">
+              {whyReasons.map((item) => (
+                <div class="flex items-start">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-brand-gold mr-3 flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                  <span class="text-gray-700">{item}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- OFFICE INFO & FINAL CTA -->
+    <section class="py-20 bg-brand-plum text-white text-center relative overflow-hidden">
+      <div class="absolute inset-0 opacity-[0.03]" style="background-image: radial-gradient(circle at 1px 1px, white 1px, transparent 0); background-size: 32px 32px;" />
+      <div class="max-w-3xl mx-auto px-4 relative z-10">
+        <h2 class="font-display text-3xl md:text-4xl font-bold mb-6 tracking-tight">No Matter Where You Are, We're Worth the Drive</h2>
+        <p class="text-xl text-white/70 mb-4">Families from across Collin County trust Trinity Life Chiropractic for the specialized care their family deserves.</p>
+        <p class="text-white/50 mb-10">301 N Allen Dr, Allen, TX 75013 | (214) 509-7744</p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="https://trinitylifechiro.janeapp.com" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center bg-brand-gold text-white px-10 py-5 rounded-full font-bold text-lg hover:bg-brand-gold-dark transition-colors shadow-2xl transform hover:-translate-y-1">Schedule Your Visit</a>
+          <a href="/services" class="inline-flex items-center justify-center bg-white/10 backdrop-blur-md border border-white/20 text-white px-10 py-5 rounded-full font-bold text-lg hover:bg-white/20 transition-colors">Explore Our Services</a>
+        </div>
+      </div>
+    </section>
+  </div>
+</BaseLayout>

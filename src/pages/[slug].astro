@@ -1,0 +1,249 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Breadcrumbs from '@/components/Breadcrumbs.astro';
+
+export async function getStaticPaths() {
+  const services = await getCollection('services');
+  return services.map(entry => ({
+    params: { slug: entry.slug },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { data } = entry;
+const title = data.metaTitle || `${data.title} | Trinity Life Chiropractic Allen TX`;
+const description = data.metaDescription || `${data.subtitle} — neurologically focused ${data.title.toLowerCase()} at Trinity Life Chiropractic in Allen, TX.`;
+
+const faqStructuredData = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: data.faqs.map(faq => ({
+    '@type': 'Question',
+    name: faq.question,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: faq.answer,
+    },
+  })),
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  structuredData={faqStructuredData}
+>
+  <Breadcrumbs items={[{ name: 'Home', href: '/' }, { name: 'Services', href: '/services' }, { name: data.title }]} />
+
+  <!-- 1. HERO -->
+  <div class="relative min-h-[70vh] flex items-center overflow-hidden">
+    <div
+      class="absolute inset-0 bg-cover bg-center"
+      style={`background-image: url('${data.heroImage}')`}
+    >
+      <div class="absolute inset-0 bg-gradient-to-r from-brand-plum-dark/90 to-brand-plum/40 mix-blend-multiply" />
+    </div>
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-20">
+      <div class="max-w-2xl text-white animate-fade-in-up">
+        <div class="flex items-center gap-2 mb-4">
+          <span class="h-1 w-12 bg-brand-gold rounded-full"></span>
+          <span class="text-brand-gold font-bold tracking-widest uppercase text-sm">Trinity Life Services</span>
+        </div>
+        <h1 class="font-display text-5xl md:text-7xl font-bold mb-6 leading-tight tracking-tight">
+          {data.title}
+        </h1>
+        <p class="text-xl md:text-2xl text-white/80 font-light mb-10 leading-relaxed">
+          {data.subtitle}
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a
+            href="https://trinitylifechiro.janeapp.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="bg-brand-gold text-white px-8 py-4 rounded-full font-bold hover:bg-brand-gold-dark transition-colors shadow-lg flex items-center justify-center gap-2"
+          >
+            {data.cta} <span>&rarr;</span>
+          </a>
+          <a
+            href="#learn-more"
+            class="bg-white/10 backdrop-blur-md border border-white/20 text-white px-8 py-4 rounded-full font-bold hover:bg-white/20 transition-colors text-center"
+          >
+            Learn More
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. PAIN POINTS -->
+  <section id="learn-more" class="py-24 bg-brand-cream/40">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl mx-auto text-center mb-16">
+        <h2 class="font-display text-3xl font-bold text-brand-plum mb-6">{data.introTitle}</h2>
+        <p class="text-xl text-gray-600 leading-relaxed">{data.introText}</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {data.problems.map((prob, idx) => (
+          <div class="bg-white p-8 rounded-2xl shadow-sm border-t-4 border-brand-gold h-full" style={`animation-delay: ${idx * 100}ms`}>
+            <h3 class="font-display text-lg font-bold text-gray-900 mb-3">{prob.title}</h3>
+            <p class="text-gray-600 text-sm leading-relaxed">{prob.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. SOLUTION / APPROACH -->
+  <section class="py-24 bg-white overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col lg:flex-row items-center gap-16">
+        <div class="lg:w-1/2 order-2 lg:order-1">
+          <div class="relative rounded-3xl overflow-hidden shadow-2xl">
+            <img src={data.solutionImage} alt={data.solutionTitle} class="w-full h-full object-cover" loading="lazy" />
+            <div class="absolute inset-0 bg-brand-plum/10" />
+          </div>
+        </div>
+        <div class="lg:w-1/2 order-1 lg:order-2">
+          <span class="text-brand-gold font-bold tracking-widest uppercase text-sm mb-2 block">Our Approach</span>
+          <h2 class="font-display text-4xl font-bold text-brand-plum mb-6 tracking-tight">{data.solutionTitle}</h2>
+          <p class="text-lg text-gray-600 mb-8 leading-relaxed">{data.solutionText}</p>
+          <div class="bg-brand-plum/5 p-6 rounded-2xl border-l-4 border-brand-plum">
+            <div class="flex gap-4">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-brand-plum flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+              <p class="text-gray-700 italic text-sm">
+                "We don't just treat the symptom; we correct the cause. By removing interference in the nervous system, your body can heal itself."
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. BENEFITS GRID -->
+  <section class="py-24 bg-brand-plum text-white relative overflow-hidden">
+    <div class="absolute inset-0 opacity-[0.03]" style="background-image: radial-gradient(circle at 1px 1px, white 1px, transparent 0); background-size: 32px 32px;" />
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="text-center mb-16">
+        <h2 class="font-display text-3xl font-bold mb-4 tracking-tight">What Improvement Looks Like</h2>
+        <p class="text-white/70">Real results we see in our practice members every day.</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        {data.benefits.map((item) => (
+          <div class="flex items-start p-6 bg-white rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+            <div class="flex-shrink-0 w-12 h-12 bg-brand-plum/10 rounded-full flex items-center justify-center mr-6">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-brand-plum" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            </div>
+            <div>
+              <h4 class="text-xl font-bold text-gray-900 mb-2">{item.title}</h4>
+              <p class="text-gray-600 leading-relaxed">{item.desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. TESTIMONIAL -->
+  <section class="py-24 bg-brand-gold/10">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div class="mb-8 flex justify-center text-brand-gold">
+        {[...Array(5)].map(() => (
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 fill-current" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        ))}
+      </div>
+      <h2 class="font-display text-3xl md:text-5xl italic text-brand-plum mb-8 leading-tight">
+        &ldquo;{data.testimonial.text}&rdquo;
+      </h2>
+      <div>
+        <p class="font-bold text-gray-900 text-lg">{data.testimonial.author}</p>
+        <p class="text-brand-gold">{data.testimonial.role}</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. PROCESS STEPS -->
+  <section class="py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="font-display text-3xl font-bold text-brand-plum tracking-tight">Your Path to Wellness</h2>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="text-center p-6">
+          <div class="w-16 h-16 bg-brand-plum text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6 shadow-lg shadow-brand-plum/30">1</div>
+          <h3 class="font-display text-xl font-bold mb-3">Consult & Scan</h3>
+          <p class="text-gray-600">We start with a conversation and our advanced INSiGHT scans to see exactly what's going on.</p>
+        </div>
+        <div class="text-center p-6">
+          <div class="w-16 h-16 bg-brand-gold text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6 shadow-lg shadow-brand-gold/30">2</div>
+          <h3 class="font-display text-xl font-bold mb-3">Custom Care Plan</h3>
+          <p class="text-gray-600">We build a plan tailored to your nervous system's specific needs and goals.</p>
+        </div>
+        <div class="text-center p-6">
+          <div class="w-16 h-16 bg-white border-2 border-brand-plum text-brand-plum rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6">3</div>
+          <h3 class="font-display text-xl font-bold mb-3">Gentle Adjustments</h3>
+          <p class="text-gray-600">Specific, gentle corrections to clear the interference and let the healing begin.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. FAQ (native details/summary) -->
+  <section class="py-24 bg-brand-cream/40">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h3 class="font-display text-3xl font-bold text-brand-plum mb-8 text-center tracking-tight">Common Questions</h3>
+      <div class="space-y-4">
+        {data.faqs.map((faq) => (
+          <details class="group border border-gray-200 rounded-2xl overflow-hidden bg-white">
+            <summary class="flex justify-between items-center w-full p-6 cursor-pointer hover:bg-gray-50 transition-colors list-none [&::-webkit-details-marker]:hidden">
+              <span class="font-bold text-gray-800 text-lg pr-4">{faq.question}</span>
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-400 group-open:text-brand-gold group-open:rotate-180 transition-transform flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </summary>
+            <div class="p-6 pt-0 text-gray-600 leading-relaxed border-t border-gray-100">
+              {faq.answer}
+            </div>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. FINAL CTA -->
+  <section class="py-20 bg-brand-plum text-white text-center relative overflow-hidden">
+    <div class="absolute inset-0 opacity-[0.03]" style="background-image: radial-gradient(circle at 1px 1px, white 1px, transparent 0); background-size: 32px 32px;" />
+    <div class="max-w-3xl mx-auto px-4 relative z-10">
+      <h2 class="font-display text-4xl font-bold mb-6 tracking-tight">Ready to Experience the Difference?</h2>
+      <p class="text-xl text-white/70 mb-10">
+        Appointments are filling up fast. Take the first step towards a healthier future today.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a
+          href="https://trinitylifechiro.janeapp.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center justify-center bg-brand-gold text-white px-10 py-5 rounded-full font-bold text-lg hover:bg-brand-gold-dark transition-colors shadow-2xl transform hover:-translate-y-1"
+        >
+          {data.cta}
+        </a>
+        <a
+          href="/services"
+          class="inline-flex items-center justify-center bg-white/10 backdrop-blur-md border border-white/20 text-white px-10 py-5 rounded-full font-bold text-lg hover:bg-white/20 transition-colors"
+        >
+          Explore Other Services
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .animate-fade-in-up {
+    animation: fadeInUp 0.8s ease-out forwards;
+  }
+</style>

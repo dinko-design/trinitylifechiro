@@ -1,0 +1,77 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Breadcrumbs from '@/components/Breadcrumbs.astro';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog');
+  return posts.map(entry => ({
+    params: { slug: entry.slug },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { data } = entry;
+const { Content } = await entry.render();
+const title = data.metaTitle || `${data.title} | Trinity Life Chiropractic Blog`;
+const description = data.metaDescription || data.excerpt;
+---
+
+<BaseLayout title={title} description={description}>
+  <Breadcrumbs items={[{ name: 'Home', href: '/' }, { name: 'Blog', href: '/blog' }, { name: data.title }]} />
+
+  <div class="pt-24 min-h-screen bg-white">
+    <article class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div class="mb-8">
+        <a href="/blog" class="inline-flex items-center text-gray-500 hover:text-brand-plum transition-colors mb-8">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 mr-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+          Back to Journal
+        </a>
+
+        <div class="flex flex-wrap gap-4 items-center text-sm text-gray-500 mb-6">
+          <span class="bg-brand-plum/10 text-brand-plum px-3 py-1 rounded-full font-semibold">{data.category}</span>
+          <span>{data.date}</span>
+          <span>{data.readTime}</span>
+        </div>
+
+        <h1 class="font-display text-3xl md:text-5xl font-bold text-gray-900 mb-8 leading-tight tracking-tight">{data.title}</h1>
+
+        <div class="flex items-center border-b border-gray-100 pb-8">
+          <div class="w-10 h-10 bg-brand-plum/10 rounded-full flex items-center justify-center text-brand-plum mr-3">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          </div>
+          <div>
+            <p class="font-bold text-gray-900 text-sm">{data.author}</p>
+            <p class="text-gray-500 text-xs">Trinity Life Chiropractic</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="mb-12 rounded-3xl overflow-hidden shadow-lg">
+        <img src={data.image} alt={data.title} class="w-full h-auto object-cover max-h-[500px]" />
+      </div>
+
+      <div class="prose prose-lg prose-purple max-w-none text-gray-600 leading-relaxed prose-headings:font-display prose-headings:text-brand-plum prose-headings:tracking-tight prose-a:text-brand-gold prose-strong:text-gray-800">
+        <Content />
+      </div>
+
+      <div class="mt-16 pt-10 border-t border-gray-100">
+        <div class="bg-brand-plum/5 rounded-3xl p-8 md:p-12 text-center">
+          <h3 class="font-display text-2xl font-bold text-brand-plum mb-4">Ready to learn more?</h3>
+          <p class="text-gray-600 mb-8 max-w-2xl mx-auto">
+            If this article resonated with you, we'd love to help you explore how neurologically based care can help your family thrive.
+          </p>
+          <a
+            href="https://trinitylifechiro.janeapp.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-block bg-brand-gold text-white px-8 py-4 rounded-full font-bold hover:bg-brand-gold-dark transition-colors shadow-lg"
+          >
+            Book a Consultation
+          </a>
+        </div>
+      </div>
+    </article>
+  </div>
+</BaseLayout>

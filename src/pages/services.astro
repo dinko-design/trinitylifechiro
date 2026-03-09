@@ -1,0 +1,127 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Breadcrumbs from '@/components/Breadcrumbs.astro';
+
+const services = [
+  {
+    title: "Pregnancy (Webster Technique)",
+    description: "We specialize in the Webster Technique to balance the pelvis and reduce tension during pregnancy. This supports a more comfortable pregnancy and optimal fetal positioning.",
+    benefits: ["Relieves sciatica and round ligament pain", "Optimizes pelvic balance for birth", "Shortens labor times", "Supports postpartum recovery"],
+    image: "https://images.unsplash.com/photo-1561742139-4b0210a1894d?ixlib=rb-4.1.0&q=80&w=1080&auto=format&fit=crop",
+    link: "/pregnancy-chiropractic-care"
+  },
+  {
+    title: "Pediatric Chiropractic Care",
+    description: "Our gentle adjustments for infants and children address common developmental challenges. By balancing the nervous system, we help growing bodies function optimally.",
+    benefits: ["Relief from colic and reflux", "Improved sleep patterns", "Support for ear infections and immune health", "Assistance with sensory processing & ADHD"],
+    image: "/assets/11c918fdd89fdab71e3738ff27a1d42c36311040.png",
+    link: "/pediatric-chiropractor-services"
+  },
+  {
+    title: "Nervous System Care (Neuro-Spinal)",
+    description: "Using advanced scanning technology, we identify and correct subluxations — misalignments that interfere with brain-body communication. This is the foundation of true healing.",
+    benefits: ["Reduces chronic pain and tension", "Improves organ function", "Enhances mental clarity and focus", "Regulates the stress response (Fight or Flight)"],
+    image: "/assets/b3f48ea3427a35b55e6c4b7f80bebb87b5929149.png",
+    link: "/nervous-system-care"
+  },
+  {
+    title: "Family Wellness Care",
+    description: "Health is a family affair. Our wellness plans are designed to keep your whole family functioning at 100%, preventing illness before it starts.",
+    benefits: ["Proactive immune support", "Stress management for busy parents", "Healthy aging for seniors", "Better energy and vitality"],
+    image: "/assets/0042f13a153888e204d34c19f8fb2b1a8454b463.png",
+    link: "/family-chiropractic"
+  }
+];
+
+const conditions = [
+  { title: "Postpartum Care", subtitle: "Recovery & Pelvic Health", link: "/postpartum-chiropractic" },
+  { title: "Colic & Reflux", subtitle: "Infant Digestive Relief", link: "/colic-reflux-relief" },
+  { title: "ADHD & Sensory", subtitle: "Focus & Regulation", link: "/adhd-sensory-processing" },
+  { title: "Ear Infections", subtitle: "Immunity & Drainage", link: "/ear-infections-immunity" },
+  { title: "Kids & Teens", subtitle: "Posture & Sports", link: "/kids-chiropractic" },
+  { title: "General Wellness", subtitle: "Maintenance Care", link: "/wellness-care" },
+];
+
+const techniques = ["Upper Cervical", "Thompson Drop", "Diversified", "SOT (Sacro Occipital Technique)", "Activator Methods", "Cranial Work"];
+---
+
+<BaseLayout
+  title="Chiropractic Services | Trinity Life Chiropractic Allen TX"
+  description="Comprehensive neurological chiropractic services including prenatal Webster Technique, pediatric care, family wellness, and specialized care for ADHD, colic, and ear infections."
+>
+  <Breadcrumbs items={[{ name: 'Home', href: '/' }, { name: 'Services' }]} />
+
+  <div class="pt-24 min-h-screen bg-brand-cream/20">
+    <div class="bg-brand-plum text-white py-20 relative overflow-hidden">
+      <div class="absolute inset-0 opacity-[0.03]" style="background-image: radial-gradient(circle at 1px 1px, white 1px, transparent 0); background-size: 32px 32px;" />
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+        <h1 class="font-display text-4xl md:text-5xl font-bold mb-6 tracking-tight">Our Services</h1>
+        <p class="text-xl text-white/70 max-w-3xl mx-auto">
+          Comprehensive neurological care designed to help every member of your family thrive.
+        </p>
+      </div>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
+      {services.map((service) => (
+        <div class="bg-white rounded-3xl overflow-hidden shadow-sm border border-gray-100 flex flex-col md:flex-row mb-12 last:mb-0 group hover:shadow-xl transition-all duration-300">
+          <div class="md:w-1/2 relative h-64 md:h-auto overflow-hidden">
+            <img src={service.image} alt={service.title} class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" />
+            <div class="absolute inset-0 bg-brand-plum/10" />
+          </div>
+          <div class="md:w-1/2 p-8 md:p-12 flex flex-col justify-center">
+            <h3 class="font-display text-2xl font-bold text-gray-900 mb-4">{service.title}</h3>
+            <p class="text-gray-600 mb-6 leading-relaxed">{service.description}</p>
+            <h4 class="font-semibold text-gray-900 mb-3">Key Benefits:</h4>
+            <ul class="space-y-3">
+              {service.benefits.map((benefit) => (
+                <li class="flex items-start text-gray-600">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-brand-gold mr-3 flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                  <span>{benefit}</span>
+                </li>
+              ))}
+            </ul>
+            <div class="mt-8 flex gap-4">
+              <a href={service.link} class="inline-flex items-center justify-center px-6 py-3 border-2 border-brand-plum text-base font-medium rounded-full text-brand-plum hover:bg-brand-plum hover:text-white transition-all">
+                Learn More
+              </a>
+              <a href="https://trinitylifechiro.janeapp.com" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center px-6 py-3 text-base font-medium rounded-full shadow-sm text-white bg-brand-gold hover:bg-brand-gold-dark transition-all">
+                Book Appointment
+              </a>
+            </div>
+          </div>
+        </div>
+      ))}
+
+      <!-- Conditions Grid -->
+      <div class="mt-20">
+        <div class="text-center mb-12">
+          <h2 class="font-display text-3xl font-bold text-gray-900 mb-4 tracking-tight">Specific Conditions We Help</h2>
+          <p class="text-gray-600 max-w-2xl mx-auto">
+            Our neurologically focused approach is effective for a wide range of challenges facing families today.
+          </p>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {conditions.map((item) => (
+            <a href={item.link} class="block group">
+              <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 h-full hover:border-brand-gold hover:shadow-md transition-all">
+                <h3 class="text-lg font-bold text-gray-900 mb-1 group-hover:text-brand-plum transition-colors">{item.title}</h3>
+                <p class="text-sm text-gray-500">{item.subtitle}</p>
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
+
+      <!-- Techniques -->
+      <div class="mt-20 bg-white p-12 rounded-3xl shadow-sm text-center border border-gray-100">
+        <h3 class="font-display text-2xl font-bold text-gray-900 mb-6 tracking-tight">Specialized Techniques We Use</h3>
+        <div class="flex flex-wrap justify-center gap-4">
+          {techniques.map((tech) => (
+            <span class="bg-brand-cream/60 text-gray-700 px-6 py-3 rounded-full font-medium border border-gray-200">{tech}</span>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+</BaseLayout>

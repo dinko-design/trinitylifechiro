@@ -1,0 +1,38 @@
+---
+title: "Ear Infections & Immunity"
+subtitle: "Breaking the Antibiotic Cycle"
+heroImage: "https://images.unsplash.com/photo-1516627145497-ae6968895b74?ixlib=rb-4.1.0&q=80&w=1920&auto=format&fit=crop"
+introTitle: "Sick of Being Sick?"
+introText: "Chronic ear infections and constant colds are a sign that the body isn't draining or defending itself properly. Before opting for tubes or another round of antibiotics, consider the mechanical cause."
+problems:
+  - title: "Fluid Buildup"
+    desc: "Tight muscles in the neck can block the Eustachian tubes from draining."
+  - title: "Recurring Infections"
+    desc: "Stagnant fluid is a breeding ground for bacteria and viruses."
+  - title: "Antibiotic Side Effects"
+    desc: "Repeated rounds can damage gut health and immunity."
+  - title: "Hearing Concerns"
+    desc: "Chronic fluid can affect speech development and hearing."
+solutionTitle: "Plumbing & Wiring"
+solutionText: "We address the 'plumbing' (drainage) by adjusting the upper neck, allowing the Eustachian tubes to open and drain naturally. We also boost the 'wiring' (nervous system) to ensure the immune system is firing on all cylinders."
+solutionImage: "/assets/023fbc767981ef2ecd3fbe4de658a30d5d662501.png"
+benefits:
+  - title: "Natural Drainage"
+    desc: "Fluid drains without the need for surgical tubes."
+  - title: "Stronger Immunity"
+    desc: "A clear nervous system coordinates a faster, better immune response."
+  - title: "Fewer Sick Days"
+    desc: "Kids stay in school and parents stay at work."
+  - title: "Drug-Free Approach"
+    desc: "Support the body's natural defenses."
+testimonial:
+  text: "We were scheduled for tubes next month. After starting care, the fluid cleared completely. The ENT cancelled the surgery! We are so grateful."
+  author: "Rachel B."
+  role: "Mom of 3"
+faqs:
+  - question: "Can adjustments help while they are sick?"
+    answer: "Yes! Adjustments boost immune function and can help them get over the illness faster."
+  - question: "How does the neck affect the ears?"
+    answer: "A small muscle (Tensor Veli Palatini) controls the ear tubes. It is innervated by nerves in the upper neck. Tension there locks the tubes shut."
+cta: "Boost Their Immunity Naturally"
+---

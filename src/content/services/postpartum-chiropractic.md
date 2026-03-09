@@ -1,0 +1,38 @@
+---
+title: "Postpartum Recovery"
+subtitle: "Healing Support for the 'Fourth Trimester'"
+heroImage: "https://images.unsplash.com/photo-1544126566-47a3e811c5a9?ixlib=rb-4.1.0&q=80&w=1920&auto=format&fit=crop"
+introTitle: "You've Birthed the Baby, Now Let's Heal the Mom"
+introText: "The postpartum period is physically demanding. You are recovering from birth while caring for a newborn 24/7. Your body needs support to realign, heal, and adapt to the new stresses of motherhood."
+problems:
+  - title: "Nursing Back Pain"
+    desc: "The 'hunch' from feeding and rocking creates immense upper back tension."
+  - title: "Pelvic Floor Issues"
+    desc: "Lingering weakness or instability from delivery affects daily life."
+  - title: "Sleep Deprivation"
+    desc: "Broken sleep patterns keep your nervous system in 'survival mode'."
+  - title: "Mommy Wrist"
+    desc: "Repetitive strain from lifting and holding the baby causes wrist and thumb pain."
+solutionTitle: "Restoring Balance After Birth"
+solutionText: "We gently realign the spine and pelvis to support your body's natural healing process. Our care focuses on calming the nervous system, helping you rest better when you can, and ensuring you have the physical resilience to care for your little one."
+solutionImage: "/assets/0042f13a153888e204d34c19f8fb2b1a8454b463.png"
+benefits:
+  - title: "Faster Recovery"
+    desc: "Proper alignment improves blood flow and nerve function for tissue healing."
+  - title: "Better Posture"
+    desc: "Counteract the strain of carrying and feeding your baby."
+  - title: "Mood Support"
+    desc: "Regulating the nervous system can help stabilize mood and reduce anxiety."
+  - title: "Energy Boost"
+    desc: "Remove the 'power drains' of misalignment to maximize your energy."
+testimonial:
+  text: "I was in so much pain after my delivery I could barely lift my son. Dr. Colton helped me get my strength back. I'm a better mom because I'm not in pain."
+  author: "Jessica M."
+  role: "Postpartum Mom"
+faqs:
+  - question: "How soon can I come in after birth?"
+    answer: "As soon as you feel ready! Many moms come in within the first week. We use very gentle techniques suitable for healing bodies."
+  - question: "Can I bring my baby?"
+    answer: "Always. We love babies! We can even check them during the same visit."
+cta: "Book Your Postpartum Checkup"
+---

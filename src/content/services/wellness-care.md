@@ -1,0 +1,38 @@
+---
+title: "Wellness Care"
+subtitle: "Living Life at 100%"
+heroImage: "https://images.unsplash.com/photo-1760259202854-1e05da21fe29?ixlib=rb-4.1.0&q=80&w=1920&auto=format&fit=crop"
+introTitle: "Don't Wait for Pain"
+introText: "You brush your teeth to prevent cavities. Wellness chiropractic is the same concept for your spine and nervous system. Maintain your health rather than trying to recover it."
+problems:
+  - title: "Silent Stress"
+    desc: "Stress accumulates daily, often without immediate symptoms."
+  - title: "Loss of Mobility"
+    desc: "Stiff joints lead to faster degeneration as we age."
+  - title: "Low Energy"
+    desc: "Subluxations drain your battery."
+  - title: "Weakened Immunity"
+    desc: "A stressed system can't fight off invaders as well."
+solutionTitle: "Proactive Health"
+solutionText: "Our wellness members enjoy higher energy, better sleep, and stronger immune systems. They don't just 'get by'—they thrive. It is about optimal function, not just pain relief."
+solutionImage: "/assets/023fbc767981ef2ecd3fbe4de658a30d5d662501.png"
+benefits:
+  - title: "Healthy Aging"
+    desc: "Keep moving freely well into your golden years."
+  - title: "Mental Clarity"
+    desc: "A clear connection allows for better focus and mood."
+  - title: "Peak Performance"
+    desc: "Whether in sports or career, function at your best."
+  - title: "Cost Savings"
+    desc: "Prevention is always cheaper than crisis care."
+testimonial:
+  text: "I haven't had 'back pain' in years, but I still come every two weeks. It keeps me feeling young, energized, and ready for anything."
+  author: "Robert L."
+  role: "Member for 5 years"
+faqs:
+  - question: "How often do I need to come?"
+    answer: "Wellness frequency varies, but many practice members find once every 2-4 weeks keeps them functioning optimally."
+  - question: "Is it expensive?"
+    answer: "We offer affordable wellness memberships that make regular care cost-effective for individuals and families."
+cta: "Join Our Wellness Community"
+---

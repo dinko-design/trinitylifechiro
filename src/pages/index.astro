@@ -1,0 +1,21 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { Hero } from '@/app/components/Hero';
+import { About } from '@/app/components/About';
+import { Services } from '@/app/components/Services';
+import { Process } from '@/app/components/Process';
+import { Testimonials } from '@/app/components/Testimonials';
+import { Contact } from '@/app/components/Contact';
+---
+
+<BaseLayout
+  title="Trinity Life Chiropractic | Family Chiropractor in Allen, TX"
+  description="Neurologically focused prenatal, pediatric, and family chiropractic care in Allen, Texas. Webster Technique certified. Serving Allen, McKinney, Plano, Frisco & surrounding areas."
+>
+  <Hero client:load />
+  <About client:visible />
+  <Services client:visible />
+  <Process client:visible />
+  <Testimonials client:visible />
+  <Contact client:visible />
+</BaseLayout>

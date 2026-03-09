@@ -1,0 +1,126 @@
+---
+import '@/styles/index.css';
+import { Header } from '@/app/components/Header.tsx';
+import FooterAstro from '@/components/Footer.astro';
+
+interface Props {
+  title: string;
+  description: string;
+  canonical?: string;
+  ogImage?: string;
+  ogType?: string;
+  structuredData?: object | object[];
+  noindex?: boolean;
+}
+
+const {
+  title,
+  description,
+  canonical = Astro.url.href,
+  ogImage = '/assets/og-default.png',
+  ogType = 'website',
+  structuredData,
+  noindex = false,
+} = Astro.props;
+
+const siteName = 'Trinity Life Chiropractic';
+const siteUrl = 'https://trinitylifechiro.com';
+
+// Ensure canonical is absolute
+const canonicalUrl = canonical.startsWith('http') ? canonical : `${siteUrl}${canonical}`;
+
+// Build structured data array
+const jsonLdItems: object[] = [];
+
+// Always include LocalBusiness
+jsonLdItems.push({
+  '@context': 'https://schema.org',
+  '@type': 'Chiropractor',
+  '@id': `${siteUrl}/#organization`,
+  name: siteName,
+  url: siteUrl,
+  telephone: '+1-214-509-7744',
+  email: 'drobrien@trinitylifechiro.com',
+  image: `${siteUrl}/assets/logo-horizontal.png`,
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: '301 N Allen Dr',
+    addressLocality: 'Allen',
+    addressRegion: 'TX',
+    postalCode: '75013',
+    addressCountry: 'US',
+  },
+  geo: {
+    '@type': 'GeoCoordinates',
+    latitude: 33.1032,
+    longitude: -96.6706,
+  },
+  openingHoursSpecification: [
+    { '@type': 'OpeningHoursSpecification', dayOfWeek: 'Monday', opens: '09:00', closes: '18:00' },
+    { '@type': 'OpeningHoursSpecification', dayOfWeek: 'Tuesday', opens: '09:00', closes: '18:00' },
+    { '@type': 'OpeningHoursSpecification', dayOfWeek: 'Thursday', opens: '08:00', closes: '18:00' },
+    { '@type': 'OpeningHoursSpecification', dayOfWeek: 'Friday', opens: '09:00', closes: '13:00' },
+  ],
+  areaServed: [
+    'Allen, TX', 'McKinney, TX', 'Plano, TX', 'Frisco, TX',
+    'Fairview, TX', 'Lucas, TX', 'Murphy, TX', 'Parker, TX', 'Richardson, TX',
+  ],
+  priceRange: '$$',
+  sameAs: [
+    'https://www.instagram.com/trinitylifechiro/',
+    'https://www.facebook.com/trinitylifechiro/',
+  ],
+});
+
+// Add page-specific structured data
+if (structuredData) {
+  if (Array.isArray(structuredData)) {
+    jsonLdItems.push(...structuredData);
+  } else {
+    jsonLdItems.push(structuredData);
+  }
+}
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalUrl} />
+    {noindex && <meta name="robots" content="noindex, nofollow" />}
+
+    <!-- Open Graph -->
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:type" content={ogType} />
+    <meta property="og:site_name" content={siteName} />
+    <meta property="og:image" content={ogImage.startsWith('http') ? ogImage : `${siteUrl}${ogImage}`} />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Sora:wght@100..800&display=swap" rel="stylesheet" />
+
+    <!-- Structured Data -->
+    {jsonLdItems.map((item) => (
+      <script type="application/ld+json" set:html={JSON.stringify(item)} />
+    ))}
+  </head>
+  <body class="min-h-screen bg-white font-body text-gray-900">
+    <Header client:load />
+    <main>
+      <slot />
+    </main>
+    <FooterAstro />
+  </body>
+</html>
