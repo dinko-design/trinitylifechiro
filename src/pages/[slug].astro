@@ -33,6 +33,7 @@ const faqStructuredData = {
 <BaseLayout
   title={title}
   description={description}
+  ogImage={data.heroImage}
   structuredData={faqStructuredData}
 >
   <Breadcrumbs items={[{ name: 'Home', href: '/' }, { name: 'Services', href: '/services' }, { name: data.title }]} />
@@ -45,6 +46,7 @@ const faqStructuredData = {
     >
       <div class="absolute inset-0 bg-gradient-to-r from-brand-plum-dark/90 to-brand-plum/40 mix-blend-multiply" />
     </div>
+    <img src={data.heroImage} alt={`${data.title} — Trinity Life Chiropractic in Allen, TX`} class="sr-only" loading="eager" />
     <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-20">
       <div class="max-w-2xl text-white animate-fade-in-up">
         <div class="flex items-center gap-2 mb-4">
@@ -101,7 +103,7 @@ const faqStructuredData = {
       <div class="flex flex-col lg:flex-row items-center gap-16">
         <div class="lg:w-1/2 order-2 lg:order-1">
           <div class="relative rounded-3xl overflow-hidden shadow-2xl">
-            <img src={data.solutionImage} alt={data.solutionTitle} class="w-full h-full object-cover" loading="lazy" />
+            <img src={data.solutionImage} alt={`${data.title} — ${data.solutionTitle} at Trinity Life Chiropractic`} class="w-full h-full object-cover" loading="lazy" />
             <div class="absolute inset-0 bg-brand-plum/10" />
           </div>
         </div>

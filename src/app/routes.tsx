@@ -20,6 +20,7 @@ import { CareersPage } from './pages/CareersPage';
 import { BlogPage } from './pages/BlogPage';
 import { BlogPost } from './pages/BlogPost';
 import { LocationTemplate } from './pages/LocationTemplate';
+import { ImageBriefPage } from './pages/ImageBriefPage';
 
 const HomePage = () => (
   <>
@@ -83,6 +84,9 @@ export const router = createBrowserRouter([
       { path: 'chiropractor-murphy-tx', Component: LocationTemplate },
       { path: 'chiropractor-frisco-tx', Component: LocationTemplate },
       { path: 'chiropractor-richardson-tx', Component: LocationTemplate },
+
+      // Image brief (internal, not in nav)
+      { path: 'image-brief', Component: ImageBriefPage },
 
       // Dynamic Service Routes - catch all for service pages
       { path: ':slug', Component: ServiceTemplate },

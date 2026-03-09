@@ -37,6 +37,7 @@ const faqStructuredData = {
 <BaseLayout
   title={data.metaTitle}
   description={data.metaDescription}
+  ogImage={data.heroImage}
   structuredData={faqStructuredData}
 >
   <Breadcrumbs items={[{ name: 'Home', href: '/' }, { name: 'Service Areas', href: '/locations' }, { name: `${data.city}, ${data.state}` }]} />
@@ -46,6 +47,7 @@ const faqStructuredData = {
     <div class="absolute inset-0 bg-cover bg-center" style={`background-image: url('${data.heroImage}')`}>
       <div class="absolute inset-0 bg-gradient-to-r from-brand-plum-dark/95 to-brand-plum/60" />
     </div>
+    <img src={data.heroImage} alt={`Chiropractor serving ${data.city}, ${data.state} — Trinity Life Chiropractic`} class="sr-only" loading="eager" />
     <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-20">
       <div class="max-w-2xl text-white animate-fade-in-up">
         <div class="flex items-center gap-2 mb-4">
@@ -160,7 +162,7 @@ const faqStructuredData = {
           </ul>
         </div>
         <div class="relative rounded-3xl overflow-hidden shadow-2xl">
-          <img src="/assets/0042f13a153888e204d34c19f8fb2b1a8454b463.png" alt={`Serving ${data.city} families`} class="w-full h-full object-cover" loading="lazy" />
+          <img src="/assets/0042f13a153888e204d34c19f8fb2b1a8454b463.png" alt={`Trinity Life Chiropractic serving ${data.city}, ${data.state} families with neurological chiropractic care`} class="w-full h-full object-cover" loading="lazy" />
           <div class="absolute inset-0 bg-brand-plum/10" />
         </div>
       </div>

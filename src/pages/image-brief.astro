@@ -1,0 +1,12 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { ImageBriefPage } from '@/app/pages/ImageBriefPage';
+---
+
+<BaseLayout
+  title="Image Brief — Photography Shot List | Trinity Life Chiropractic"
+  description="Internal image brief dashboard for the Trinity Life Chiropractic website photo shoot."
+  noindex={true}
+>
+  <ImageBriefPage client:load />
+</BaseLayout>

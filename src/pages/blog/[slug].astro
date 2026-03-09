@@ -16,9 +16,30 @@ const { data } = entry;
 const { Content } = await entry.render();
 const title = data.metaTitle || `${data.title} | Trinity Life Chiropractic Blog`;
 const description = data.metaDescription || data.excerpt;
+
+const blogPostingData = {
+  '@context': 'https://schema.org',
+  '@type': 'BlogPosting',
+  headline: data.title,
+  image: data.image,
+  datePublished: new Date(data.date).toISOString(),
+  author: {
+    '@type': 'Person',
+    name: data.author,
+  },
+  publisher: {
+    '@type': 'Organization',
+    name: 'Trinity Life Chiropractic',
+    logo: {
+      '@type': 'ImageObject',
+      url: 'https://trinitylifechiro.com/assets/logo-horizontal.png',
+    },
+  },
+  description: description,
+};
 ---
 
-<BaseLayout title={title} description={description}>
+<BaseLayout title={title} description={description} ogImage={data.image} ogType="article" author={data.author} structuredData={blogPostingData}>
   <Breadcrumbs items={[{ name: 'Home', href: '/' }, { name: 'Blog', href: '/blog' }, { name: data.title }]} />
 
   <div class="pt-24 min-h-screen bg-white">
