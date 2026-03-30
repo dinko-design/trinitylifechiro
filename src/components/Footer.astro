@@ -1,78 +1,152 @@
 ---
 import { Image } from 'astro:assets';
-import { serviceCategories, serviceAreas, mainNav } from '@/data/navigation';
+import { serviceCategories, serviceAreas } from '@/data/navigation';
 import logoWhite from '@/assets/logo-horizontal-white.png';
 
-const currentYear = new Date().getFullYear();
-const allServices = serviceCategories.flatMap(cat => cat.items).slice(0, 5);
+const allServices = serviceCategories.flatMap(cat => cat.items);
+
+const services = [
+  { name: 'Pregnancy Chiropractic', href: '/pregnancy-chiropractic-care' },
+  { name: 'Postpartum Recovery', href: '/postpartum-chiropractic' },
+  { name: 'Pediatric Chiropractic', href: '/pediatric-chiropractor-services' },
+  { name: 'Kids & Teens', href: '/kids-chiropractic' },
+  { name: 'Family Chiropractic', href: '/family-chiropractic' },
+  { name: 'Nervous System Care', href: '/nervous-system-care' },
+  { name: 'Wellness Care', href: '/wellness-care' },
+  { name: 'ADHD & Sensory', href: '/adhd-sensory-processing' },
+  { name: 'Colic & Reflux', href: '/colic-reflux-relief' },
+  { name: 'Ear Infections', href: '/ear-infections-immunity' },
+  { name: 'Back Pain', href: '/back-pain-chiropractic' },
+  { name: 'Knee Pain', href: '/knee-pain-chiropractic' },
+];
+
+const quickLinks = [
+  { name: 'Home', href: '/' },
+  { name: 'Meet The Team', href: '/team' },
+  { name: 'Our Process', href: '/process' },
+  { name: 'All Services', href: '/services' },
+  { name: 'Service Areas', href: '/locations' },
+  { name: 'Blog', href: '/blog' },
+  { name: 'Contact Us', href: '/#contact' },
+  { name: 'Careers', href: '/careers' },
+];
 ---
 
-<footer class="bg-brand-plum-dark text-white pt-20 pb-10 relative overflow-hidden">
+<footer class="bg-brand-plum text-white pt-16 pb-8 relative overflow-hidden">
   <div class="absolute inset-0 opacity-[0.03]" style="background-image: radial-gradient(circle at 1px 1px, white 1px, transparent 0); background-size: 32px 32px;"></div>
 
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
-      <!-- Brand -->
-      <div class="space-y-6">
-        <Image
-          src={logoWhite}
-          alt="Trinity Life Chiropractic"
-          class="h-11 w-auto opacity-90"
-          width={200}
-          height={44}
-          loading="lazy"
-          format="webp"
-        />
-        <p class="text-white/50 leading-relaxed text-sm">
-          Neurologically focused chiropractic care tailored for the entire family. Serving Allen, McKinney, Plano, Frisco, and surrounding communities.
+    <!-- 4-Column Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+      <!-- Column 1: Brand -->
+      <div class="space-y-5">
+        <a href="/" aria-label="Trinity Life Chiropractic home">
+          <Image
+            src={logoWhite}
+            alt="Trinity Life Chiropractic"
+            class="h-11 w-auto opacity-90"
+            width={200}
+            height={44}
+            loading="lazy"
+            format="webp"
+          />
+        </a>
+        <p class="text-white/70 leading-relaxed text-sm">
+          Neurologically focused family chiropractic care in Allen, Texas.
         </p>
         <div class="flex space-x-3">
-          <a href="https://www.instagram.com/trinitylifechiro/" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-white/8 flex items-center justify-center hover:bg-brand-gold transition-colors" aria-label="Instagram">
+          <a
+            href="https://www.instagram.com/trinitylifechiro/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-brand-gold transition-colors"
+            aria-label="Follow us on Instagram"
+          >
             <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
           </a>
-          <a href="https://www.facebook.com/trinitylifechiro/" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-white/8 flex items-center justify-center hover:bg-brand-gold transition-colors" aria-label="Facebook">
+          <a
+            href="https://www.facebook.com/trinitylifechiro/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-brand-gold transition-colors"
+            aria-label="Follow us on Facebook"
+          >
             <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
           </a>
         </div>
       </div>
 
-      <!-- Quick Links -->
-      <nav aria-label="Quick links">
-        <h4 class="text-sm font-bold mb-6 text-brand-gold tracking-[0.15em] uppercase">Quick Links</h4>
-        <ul class="space-y-3 text-white/50 text-sm">
-          <li><a href="/" class="hover:text-white transition-colors">Home</a></li>
-          <li><a href="/team" class="hover:text-white transition-colors">Meet the Team</a></li>
-          <li><a href="/services" class="hover:text-white transition-colors">Services</a></li>
-          <li><a href="/blog" class="hover:text-white transition-colors">Blog</a></li>
-          <li><a href="/careers" class="hover:text-white transition-colors">Careers</a></li>
-        </ul>
-      </nav>
-
-      <!-- Services -->
+      <!-- Column 2: Services -->
       <nav aria-label="Services">
-        <h4 class="text-sm font-bold mb-6 text-brand-gold tracking-[0.15em] uppercase">Services</h4>
-        <ul class="space-y-3 text-white/50 text-sm">
-          {allServices.map(service => (
-            <li><a href={service.href} class="hover:text-white transition-colors">{service.name}</a></li>
+        <h4 class="text-white font-bold tracking-wide uppercase text-sm mb-4">Services</h4>
+        <ul class="space-y-2.5 text-sm">
+          {services.map(service => (
+            <li><a href={service.href} class="text-white/70 hover:text-white transition-colors">{service.name}</a></li>
           ))}
-          <li><a href="/services" class="hover:text-white transition-colors text-brand-gold-light">View All Services</a></li>
         </ul>
       </nav>
 
-      <!-- Contact -->
+      <!-- Column 3: Quick Links -->
+      <nav aria-label="Quick links">
+        <h4 class="text-white font-bold tracking-wide uppercase text-sm mb-4">Quick Links</h4>
+        <ul class="space-y-2.5 text-sm">
+          {quickLinks.map(link => (
+            <li><a href={link.href} class="text-white/70 hover:text-white transition-colors">{link.name}</a></li>
+          ))}
+        </ul>
+      </nav>
+
+      <!-- Column 4: Contact -->
       <div>
-        <h4 class="text-sm font-bold mb-6 text-brand-gold tracking-[0.15em] uppercase">Contact Us</h4>
-        <address class="space-y-3 text-white/50 text-sm not-italic">
-          <p>301 N Allen Dr</p>
-          <p>Allen, TX 75013</p>
-          <p><a href="tel:2145097744" class="hover:text-white transition-colors">(214) 509-7744</a></p>
-          <p><a href="/#contact" class="hover:text-white transition-colors">Contact Us</a></p>
+        <h4 class="text-white font-bold tracking-wide uppercase text-sm mb-4">Contact</h4>
+        <address class="space-y-3 text-sm not-italic text-white/70">
+          <p>
+            <a
+              href="https://maps.google.com/?q=301+N+Allen+Dr+Allen+TX+75013"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="hover:text-white transition-colors"
+            >
+              301 N Allen Dr<br />Allen, TX 75013
+            </a>
+          </p>
+          <p>
+            <a href="tel:2145097744" class="hover:text-white transition-colors">(214) 509-7744</a>
+          </p>
+          <div class="text-white/70 text-sm space-y-1">
+            <p>Mon & Tue: 9am &ndash; 6pm</p>
+            <p>Thu: 8am &ndash; 6pm</p>
+            <p>Fri: 9am &ndash; 1pm</p>
+          </div>
+          <a
+            href="https://trinitylifechiro.janeapp.com?utm_source=footer&utm_medium=cta&utm_campaign=footer_cta"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-block mt-2 px-5 py-2.5 bg-brand-gold text-white text-sm font-semibold rounded-lg hover:bg-brand-gold/90 transition-colors"
+            data-track="book-appointment"
+          >
+            Schedule Online
+          </a>
         </address>
       </div>
     </div>
 
-    <!-- Service Areas SEO links -->
-    <nav aria-label="Service areas" class="border-t border-white/8 pt-8 mb-8">
+    <!-- Google Maps Embed -->
+    <div class="mb-10">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d71540.07736878887!2d-96.67808302184342!3d33.110987609646465!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x864c17f2bccf1899%3A0x628efbab75b36acd!2sTrinity%20Life%20Chiropractic!5e0!3m2!1sen!2sus!4v1774877528801!5m2!1sen!2sus"
+        width="100%"
+        height="250"
+        style="border:0;border-radius:0.75rem;"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        title="Trinity Life Chiropractic location"
+      ></iframe>
+    </div>
+
+    <!-- Service Areas SEO Links -->
+    <nav aria-label="Service areas" class="border-t border-white/10 pt-8 mb-8">
       <h4 class="text-xs font-bold text-brand-gold uppercase tracking-[0.2em] mb-4">Proudly Serving</h4>
       <div class="flex flex-wrap gap-x-6 gap-y-2 text-white/35 text-xs">
         {serviceAreas.map(area => (
@@ -81,8 +155,9 @@ const allServices = serviceCategories.flatMap(cat => cat.items).slice(0, 5);
       </div>
     </nav>
 
-    <div class="border-t border-white/8 pt-8 flex flex-col md:flex-row justify-between items-center text-white/30 text-xs">
-      <p>&copy; {currentYear} Trinity Life Chiropractic. All rights reserved.</p>
+    <!-- Bottom Bar -->
+    <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center text-white/30 text-xs">
+      <p>&copy; 2026 Trinity Life Chiropractic. All rights reserved.</p>
       <div class="flex space-x-6 mt-4 md:mt-0">
         <a href="/privacy" class="hover:text-white/60 transition-colors">Privacy Policy</a>
         <a href="/terms" class="hover:text-white/60 transition-colors">Terms of Service</a>

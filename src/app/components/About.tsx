@@ -37,11 +37,11 @@ export const About = () => {
                   <User className="w-6 h-6" />
                 </div>
                 <div>
-                  <h3 className="font-display text-xl font-semibold text-gray-900 mb-0.5">Dr. Colton O'Brien</h3>
-                  <p className="text-sm text-brand-gold font-semibold mb-2">Lead Chiropractor & Founder</p>
+                  <h3 className="font-display text-xl font-semibold text-gray-900 mb-0.5">Meet Our Team</h3>
+                  <p className="text-sm text-brand-gold font-semibold mb-2">Led by Dr. Colton O'Brien</p>
                   <p className="text-gray-500 text-sm leading-relaxed">
-                    A Parker University graduate with a personal journey through ADHD and spinal injury.
-                    Specializes in neuro-spinal adjustments and family wellness.
+                    A Parker University graduate with a personal journey through ADHD and spinal injury,
+                    supported by a dedicated team passionate about family wellness.
                   </p>
                 </div>
               </a>

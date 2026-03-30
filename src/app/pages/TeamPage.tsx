@@ -10,7 +10,7 @@ export const TeamPage = () => {
        <div className="bg-white pb-16">
          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16">
            <div className="text-center mb-20">
-             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Meet The Doctor</h1>
+             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Meet The Team</h1>
              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
                Passionate experts dedicated to restoring health and hope for families in our community.
              </p>
@@ -57,6 +57,42 @@ export const TeamPage = () => {
              </div>
            </div>
 
+           {/* Divider */}
+           <hr className="my-20 border-gray-200" />
+
+           {/* Staff Section */}
+           <div className="text-center mb-16">
+             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Our Team</h2>
+             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+               The people behind the scenes who make every visit feel like coming home.
+             </p>
+           </div>
+
+           <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
+             {/* Jaimie Graves */}
+             <div className="flex flex-col items-center text-center">
+               <div className="rounded-3xl overflow-hidden shadow-xl aspect-[3/4] w-full max-w-sm mb-8">
+                 <img src="/assets/images/jaimie-graves-chiropractic-assistant.webp" alt="Jaimie Graves, Chiropractic Assistant at Trinity Life Chiropractic in Allen, TX" className="w-full h-full object-cover" />
+               </div>
+               <h3 className="text-2xl font-bold text-gray-900 mb-1">Jaimie Graves</h3>
+               <p className="text-[#a68d60] font-semibold mb-4 text-lg">Chiropractic Assistant</p>
+               <div className="prose text-gray-600">
+                 <p>Jaimie is the hands-on heart of every appointment at Trinity Life. She works closely with Dr. O'Brien to prepare patients for their adjustments, assists with scans and assessments, and makes sure each visit runs smoothly from start to finish. Her calm, reassuring presence puts even the littlest patients at ease, and her genuine passion for helping families feel comfortable and cared for is evident the moment you walk through the door.</p>
+               </div>
+             </div>
+
+             {/* Alexis Tappe */}
+             <div className="flex flex-col items-center text-center">
+               <div className="rounded-3xl overflow-hidden shadow-xl aspect-[3/4] w-full max-w-sm mb-8">
+                 <img src="/assets/images/alexis-tappe-care-coordinator.webp" alt="Alexis Tappe, Care Coordinator at Trinity Life Chiropractic in Allen, TX" className="w-full h-full object-cover" />
+               </div>
+               <h3 className="text-2xl font-bold text-gray-900 mb-1">Alexis Tappe</h3>
+               <p className="text-[#a68d60] font-semibold mb-4 text-lg">Care Coordinator</p>
+               <div className="prose text-gray-600">
+                 <p>Alexis is the friendly face and warm voice that greets every family at Trinity Life. She manages scheduling, handles new patient intake, coordinates care plans, and ensures every detail of your experience is seamless from the very first phone call to each follow-up visit. Her organizational skills and genuine care for people mean that families always feel heard, supported, and well taken care of throughout their entire wellness journey.</p>
+               </div>
+             </div>
+           </div>
 
          </div>
        </div>

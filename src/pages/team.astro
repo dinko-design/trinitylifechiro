@@ -4,8 +4,8 @@ import Breadcrumbs from '@/components/Breadcrumbs.astro';
 ---
 
 <BaseLayout
-  title="Meet the Doctor | Trinity Life Chiropractic Allen TX"
-  description="Meet Dr. Colton O'Brien — the passionate chiropractor at Trinity Life Chiropractic in Allen, TX. Webster Certified, ICPA trained, and dedicated to family wellness."
+  title="Meet the Team | Trinity Life Chiropractic Allen TX"
+  description="Meet the team at Trinity Life Chiropractic in Allen, TX — Dr. Colton O'Brien and his dedicated staff. Webster Certified, ICPA trained, and committed to family wellness."
   ogImage="/assets/og-team.png"
 >
   <Breadcrumbs items={[{ name: 'Home', href: '/' }, { name: 'About Us' }]} />
@@ -14,12 +14,13 @@ import Breadcrumbs from '@/components/Breadcrumbs.astro';
     <div class="bg-white pb-16">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16">
         <div class="text-center mb-20">
-          <h1 class="font-display text-4xl md:text-5xl font-bold text-gray-900 mb-6 tracking-tight">Meet The Doctor</h1>
+          <h1 class="font-display text-4xl md:text-5xl font-bold text-gray-900 mb-6 tracking-tight">Meet The Team</h1>
           <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-            Passionate expert dedicated to restoring health and hope for families in our community.
+            Passionate experts dedicated to restoring health and hope for families in our community.
           </p>
         </div>
 
+        <!-- Dr. Colton O'Brien -->
         <div class="flex flex-col md:flex-row gap-12 items-start">
           <div class="md:w-1/3">
             <div class="rounded-3xl overflow-hidden shadow-xl aspect-[3/4]">
@@ -38,6 +39,43 @@ import Breadcrumbs from '@/components/Breadcrumbs.astro';
               <span class="bg-brand-plum/10 px-4 py-2 rounded-full text-brand-plum text-sm font-semibold">Parker University</span>
               <span class="bg-brand-plum/10 px-4 py-2 rounded-full text-brand-plum text-sm font-semibold">ICPA Member</span>
               <span class="bg-brand-plum/10 px-4 py-2 rounded-full text-brand-plum text-sm font-semibold">Webster Certified</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Divider -->
+        <hr class="my-20 border-gray-200" />
+
+        <!-- Staff Section -->
+        <div class="text-center mb-16">
+          <h2 class="font-display text-3xl md:text-4xl font-bold text-gray-900 mb-4 tracking-tight">Our Team</h2>
+          <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+            The people behind the scenes who make every visit feel like coming home.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-16">
+          <!-- Jaimie Graves -->
+          <div class="flex flex-col items-center text-center">
+            <div class="rounded-3xl overflow-hidden shadow-xl aspect-[3/4] w-full max-w-sm mb-8">
+              <img src="/assets/images/jaimie-graves-chiropractic-assistant.webp" alt="Jaimie Graves, Chiropractic Assistant at Trinity Life Chiropractic in Allen, TX" class="w-full h-full object-cover" width="400" height="533" loading="lazy" />
+            </div>
+            <h3 class="font-display text-2xl font-bold text-gray-900 mb-1">Jaimie Graves</h3>
+            <p class="text-brand-gold font-semibold mb-4 text-lg">Chiropractic Assistant</p>
+            <div class="prose text-gray-600">
+              <p>Jaimie is the hands-on heart of every appointment at Trinity Life. She works closely with Dr. O'Brien to prepare patients for their adjustments, assists with scans and assessments, and makes sure each visit runs smoothly from start to finish. Her calm, reassuring presence puts even the littlest patients at ease, and her genuine passion for helping families feel comfortable and cared for is evident the moment you walk through the door.</p>
+            </div>
+          </div>
+
+          <!-- Alexis Tappe -->
+          <div class="flex flex-col items-center text-center">
+            <div class="rounded-3xl overflow-hidden shadow-xl aspect-[3/4] w-full max-w-sm mb-8">
+              <img src="/assets/images/alexis-tappe-care-coordinator.webp" alt="Alexis Tappe, Care Coordinator at Trinity Life Chiropractic in Allen, TX" class="w-full h-full object-cover" width="400" height="533" loading="lazy" />
+            </div>
+            <h3 class="font-display text-2xl font-bold text-gray-900 mb-1">Alexis Tappe</h3>
+            <p class="text-brand-gold font-semibold mb-4 text-lg">Care Coordinator</p>
+            <div class="prose text-gray-600">
+              <p>Alexis is the friendly face and warm voice that greets every family at Trinity Life. She manages scheduling, handles new patient intake, coordinates care plans, and ensures every detail of your experience is seamless from the very first phone call to each follow-up visit. Her organizational skills and genuine care for people mean that families always feel heard, supported, and well taken care of throughout their entire wellness journey.</p>
             </div>
           </div>
         </div>
