@@ -16,12 +16,12 @@ export const Hero = () => {
         }}
       >
         {/* Gradient overlay for depth */}
-        <div className="absolute inset-0 bg-gradient-to-br from-[#564972]/75 via-[#564972]/55 to-[#3d3351]/70" />
+        <div className="absolute inset-0 bg-gradient-to-br from-[#564972]/90 via-[#564972]/70 to-[#3d3351]/80" />
         {/* Subtle noise texture */}
         <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: 'url("data:image/svg+xml,%3Csvg viewBox=\'0 0 256 256\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cfilter id=\'n\'%3E%3CfeTurbulence type=\'fractalNoise\' baseFrequency=\'0.9\' numOctaves=\'4\' stitchTiles=\'stitch\'/%3E%3C/filter%3E%3Crect width=\'100%25\' height=\'100%25\' filter=\'url(%23n)\'/%3E%3C/svg%3E")' }} />
       </div>
 
-      <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 text-white max-w-7xl pt-20">
+      <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 text-white max-w-7xl pt-32">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}

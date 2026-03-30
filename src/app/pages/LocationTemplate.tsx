@@ -930,9 +930,9 @@ export const LocationTemplate = ({ slug: propSlug }: { slug?: string }) => {
           className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: `url('${data.heroImage}')` }}
         >
-          <div className="absolute inset-0 bg-gradient-to-r from-[#564972]/95 to-[#564972]/60" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#564972]/95 to-[#564972]/75" />
         </div>
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-20">
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full pt-40 pb-20">
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
