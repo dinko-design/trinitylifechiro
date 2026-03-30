@@ -1,3 +1,6 @@
+# Force www
+https://trinitylifechiro.com/*    https://www.trinitylifechiro.com/:splat    301!
+
 # Page redirects (old WordPress → new Astro)
 /what-to-expect/              /process                          301
 /contact-us/                  /#contact                         301

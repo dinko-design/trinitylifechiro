@@ -27,7 +27,7 @@ export const POST: APIRoute = async ({ request }) => {
   try {
     // CSRF: check origin
     const origin = request.headers.get('origin') || '';
-    const allowedOrigins = ['https://trinitylifechiro.com', 'https://trinitylifechiro.netlify.app', 'http://localhost:4321', 'http://127.0.0.1:4321'];
+    const allowedOrigins = ['https://www.trinitylifechiro.com', 'https://trinitylifechiro.com', 'https://trinitylifechiro.netlify.app', 'http://localhost:4321', 'http://127.0.0.1:4321'];
     if (!allowedOrigins.some(o => origin.startsWith(o))) {
       return new Response(
         JSON.stringify({ success: false, error: 'Forbidden.' }),

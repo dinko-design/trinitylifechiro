@@ -7,7 +7,7 @@ import keystatic from '@keystatic/astro';
 import tailwindcss from '@tailwindcss/vite';
 
 export default defineConfig({
-  site: 'https://trinitylifechiro.com',
+  site: 'https://www.trinitylifechiro.com',
   adapter: netlify(),
   integrations: [
     react(),

@@ -3,4 +3,4 @@ Allow: /
 Disallow: /keystatic
 Disallow: /api/
 
-Sitemap: https://trinitylifechiro.com/sitemap-index.xml
+Sitemap: https://www.trinitylifechiro.com/sitemap-index.xml
