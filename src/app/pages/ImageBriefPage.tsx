@@ -126,7 +126,7 @@ const shots: ImageShot[] = [
     orientation: 'Landscape',
     priority: 2,
     usedOn: ['Pregnancy Chiropractic service page', 'Webster Technique blog post'],
-    notes: 'Replaces Unsplash stock photo. Patient should appear relaxed and comfortable.',
+    notes: 'Patient should appear relaxed and comfortable.',
     icon: Heart,
   },
   {
@@ -188,7 +188,7 @@ const shots: ImageShot[] = [
     orientation: 'Landscape',
     priority: 2,
     usedOn: ['Postpartum Chiropractic page'],
-    notes: 'Replaces Unsplash stock. Should feel authentic, not staged.',
+    notes: 'Should feel authentic, not staged.',
     icon: Flower2,
   },
 

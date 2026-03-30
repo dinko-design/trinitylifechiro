@@ -3,8 +3,11 @@ import { motion } from 'motion/react';
 import { MapPin, ArrowRight, Phone, Calendar, CheckCircle, Car, Clock, Users, Baby, Brain } from 'lucide-react';
 
 
-import imgSmiling from '@/assets/023fbc767981ef2ecd3fbe4de658a30d5d662501.png';
-import imgHighFive from '@/assets/0042f13a153888e204d34c19f8fb2b1a8454b463.png';
+import imgSmilingObj from '@/assets/images/dr-obrien-smiling-patient-care.webp';
+import imgHighFiveObj from '@/assets/images/chiropractor-patient-high-five.webp';
+const resolveImg = (img: any): string => typeof img === 'object' && img?.src ? img.src : img;
+const imgSmiling = resolveImg(imgSmilingObj);
+const imgHighFive = resolveImg(imgHighFiveObj);
 
 const locationPages = [
   {
@@ -97,7 +100,7 @@ export const ServiceAreasPage = () => {
       {/* HERO */}
       <div className="relative bg-[#564972] py-28 overflow-hidden">
         <img
-          src="https://images.unsplash.com/photo-1649692560786-27c52dd9ac1d?ixlib=rb-4.1.0&q=80&w=1920&auto=format&fit=crop"
+          src="/assets/images/trinity-life-chiropractic-office-allen-texas.webp"
           alt="North Texas Community"
           className="absolute inset-0 w-full h-full object-cover opacity-15"
         />

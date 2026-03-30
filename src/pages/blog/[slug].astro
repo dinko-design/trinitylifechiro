@@ -2,6 +2,7 @@
 import { getCollection } from 'astro:content';
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import Breadcrumbs from '@/components/Breadcrumbs.astro';
+import ResponsiveImage from '@/components/ResponsiveImage.astro';
 
 export async function getStaticPaths() {
   const posts = await getCollection('blog');
@@ -70,7 +71,7 @@ const blogPostingData = {
       </div>
 
       <div class="mb-12 rounded-3xl overflow-hidden shadow-lg">
-        <img src={data.image} alt={data.title} class="w-full h-auto object-cover max-h-[500px]" />
+        <ResponsiveImage src={data.image} alt={data.title} class="w-full h-auto object-cover max-h-[500px]" loading="eager" sizes="(max-width: 768px) 100vw, 800px" widths={[400, 800, 1200]} />
       </div>
 
       <div class="prose prose-lg prose-purple max-w-none text-gray-600 leading-relaxed prose-headings:font-display prose-headings:text-brand-plum prose-headings:tracking-tight prose-a:text-brand-gold prose-strong:text-gray-800">

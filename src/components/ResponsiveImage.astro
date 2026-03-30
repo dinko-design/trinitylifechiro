@@ -1,0 +1,30 @@
+---
+/**
+ * ResponsiveImage - Renders an <img> with decoding="async" and loading attributes.
+ * Accepts a string URL (local /assets/ path).
+ */
+interface Props {
+  src: string;
+  alt: string;
+  class?: string;
+  loading?: 'lazy' | 'eager';
+  [key: string]: any;
+}
+
+const {
+  src,
+  alt,
+  class: className,
+  loading = 'lazy',
+  ...rest
+} = Astro.props;
+---
+
+<img
+  src={src}
+  alt={alt}
+  class={className}
+  loading={loading}
+  decoding="async"
+  {...rest}
+/>

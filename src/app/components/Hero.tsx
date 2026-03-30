@@ -1,7 +1,8 @@
 import React from 'react';
 import { motion } from 'motion/react';
 import { ArrowRight, ChevronDown } from 'lucide-react';
-import imgHighFive from '@/assets/0042f13a153888e204d34c19f8fb2b1a8454b463.png';
+import imgHighFiveObj from '@/assets/images/chiropractor-patient-high-five.webp';
+const imgHighFive = typeof imgHighFiveObj === 'object' && imgHighFiveObj?.src ? imgHighFiveObj.src : imgHighFiveObj;
 
 export const Hero = () => {
   return (

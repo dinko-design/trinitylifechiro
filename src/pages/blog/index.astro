@@ -2,6 +2,7 @@
 import { getCollection } from 'astro:content';
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import Breadcrumbs from '@/components/Breadcrumbs.astro';
+import ResponsiveImage from '@/components/ResponsiveImage.astro';
 
 const posts = await getCollection('blog');
 const sorted = posts.sort((a, b) =>
@@ -31,7 +32,7 @@ const sorted = posts.sort((a, b) =>
         {sorted.map((post) => (
           <a href={`/blog/${post.slug}`} class="group bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 flex flex-col h-full hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
             <div class="h-48 overflow-hidden">
-              <img src={post.data.image} alt={post.data.title} class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+              <ResponsiveImage src={post.data.image} alt={post.data.title} class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500" loading="lazy" sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw" widths={[400, 600, 800]} />
             </div>
             <div class="p-6 flex flex-col flex-grow">
               <div class="flex items-center text-xs text-gray-500 mb-4 space-x-3">

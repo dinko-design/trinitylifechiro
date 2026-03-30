@@ -116,7 +116,7 @@ export const Services = () => {
             </div>
             <div className="md:w-1/2 relative h-72 w-full rounded-2xl overflow-hidden shadow-lg border-2 border-white/10">
               <img
-                src="https://images.unsplash.com/photo-1725399078928-9e208e7a4cae?ixlib=rb-4.1.0&q=80&w=800&auto=format&fit=crop"
+                src="/assets/images/insight-nervous-system-scan-hand.webp"
                 alt="Advanced Neurological Scans"
                 className="absolute inset-0 w-full h-full object-cover"
               />

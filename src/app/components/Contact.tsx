@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'motion/react';
 import { MapPin, Phone, Clock } from 'lucide-react';
+import { ContactForm } from '@/app/components/ContactForm';
 
 export const Contact = () => {
   return (
@@ -74,25 +75,32 @@ export const Contact = () => {
             </div>
           </motion.div>
 
-          {/* Map */}
+          {/* Contact Form + Map */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
             viewport={{ once: true }}
-            className="h-full min-h-[450px] rounded-2xl overflow-hidden shadow-lg shadow-brand-plum/10 border border-brand-sage bg-brand-cream relative"
+            className="space-y-8"
           >
-            <iframe
-              width="100%"
-              height="100%"
-              frameBorder="0"
-              scrolling="no"
-              marginHeight={0}
-              marginWidth={0}
-              src="https://maps.google.com/maps?q=301%20N%20Allen%20Dr%2C%20Allen%2C%20TX%2075013&t=&z=15&ie=UTF8&iwloc=&output=embed"
-              className="absolute inset-0 w-full h-full"
-              title="Trinity Life Chiropractic Location"
-            ></iframe>
+            <div className="bg-white rounded-2xl p-8 shadow-lg shadow-brand-plum/10 border border-brand-sage">
+              <h3 className="font-display text-2xl font-semibold text-gray-900 mb-6">Send Us a Message</h3>
+              <ContactForm />
+            </div>
+
+            <div className="h-[300px] rounded-2xl overflow-hidden shadow-lg shadow-brand-plum/10 border border-brand-sage bg-brand-cream relative">
+              <iframe
+                width="100%"
+                height="100%"
+                frameBorder="0"
+                scrolling="no"
+                marginHeight={0}
+                marginWidth={0}
+                src="https://maps.google.com/maps?q=301%20N%20Allen%20Dr%2C%20Allen%2C%20TX%2075013&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                className="absolute inset-0 w-full h-full"
+                title="Trinity Life Chiropractic Location"
+              ></iframe>
+            </div>
           </motion.div>
         </div>
       </div>

@@ -1,7 +1,8 @@
 import React from 'react';
 import { motion } from 'motion/react';
 import { Award, GraduationCap } from 'lucide-react';
-import imgSmiling from '@/assets/023fbc767981ef2ecd3fbe4de658a30d5d662501.png';
+import imgSmilingObj from '@/assets/images/dr-obrien-smiling-patient-care.webp';
+const imgSmiling = typeof imgSmilingObj === 'object' && imgSmilingObj?.src ? imgSmilingObj.src : imgSmilingObj;
 
 export const TeamPage = () => {
   return (

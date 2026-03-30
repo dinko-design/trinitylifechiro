@@ -7,8 +7,11 @@ import {
 } from 'lucide-react';
 
 
-import imgHighFive from '@/assets/0042f13a153888e204d34c19f8fb2b1a8454b463.png';
-import imgSmiling from '@/assets/023fbc767981ef2ecd3fbe4de658a30d5d662501.png';
+import imgHighFiveObj from '@/assets/images/chiropractor-patient-high-five.webp';
+import imgSmilingObj from '@/assets/images/dr-obrien-smiling-patient-care.webp';
+const resolveImg = (img: any): string => typeof img === 'object' && img?.src ? img.src : img;
+const imgHighFive = resolveImg(imgHighFiveObj);
+const imgSmiling = resolveImg(imgSmilingObj);
 
 // --- FAQ Accordion ---
 const LocationFAQ = ({ faqs }: { faqs: { question: string; answer: string }[] }) => {
@@ -89,7 +92,7 @@ const locationData: Record<string, LocationData> = {
     metaDescription: 'Trinity Life Chiropractic in Allen, TX offers neurologically focused prenatal, pediatric, and family chiropractic care. Conveniently located on N Allen Dr. Schedule today.',
     heroHeadline: 'Your Allen, TX Chiropractor',
     heroSubheadline: 'Neurologically focused prenatal, pediatric, and family chiropractic care — right here in the heart of Allen.',
-    heroImage: 'https://images.unsplash.com/photo-1649692560786-27c52dd9ac1d?ixlib=rb-4.1.0&q=80&w=1920&auto=format&fit=crop',
+    heroImage: '/assets/images/trinity-life-chiropractic-office-allen-texas.webp',
 
     introTitle: 'Allen\'s Premier Family Chiropractic Office',
     introText: 'Trinity Life Chiropractic is proud to call Allen home. Located at 301 N Allen Dr, our office is the go-to destination for families across Collin County seeking a different approach to healthcare — one rooted in neurology, not medication. Dr. Colton O\'Brien and his team specialize in prenatal care using the Webster Technique, gentle pediatric adjustments for newborns through teens, and nervous system-focused wellness care for the whole family.',
@@ -179,7 +182,7 @@ const locationData: Record<string, LocationData> = {
     metaDescription: 'Looking for a prenatal or pediatric chiropractor near McKinney, TX? Trinity Life Chiropractic in Allen is just 10 minutes away. Webster Technique certified. Book today.',
     heroHeadline: 'Chiropractor Near McKinney, TX',
     heroSubheadline: 'McKinney families trust Trinity Life Chiropractic for neurologically focused prenatal, pediatric, and family care — just a short drive south on US-75.',
-    heroImage: 'https://images.unsplash.com/photo-1765947378164-f7bf4fc4784d?ixlib=rb-4.1.0&q=80&w=1920&auto=format&fit=crop',
+    heroImage: '/assets/images/trinity-life-chiropractic-treatment-room.webp',
 
     introTitle: 'Serving McKinney Families from Nearby Allen',
     introText: 'McKinney is one of the fastest-growing cities in Texas, and its families deserve access to specialized chiropractic care that goes beyond pain relief. Trinity Life Chiropractic, located just 10 minutes south in Allen, has become the trusted neurological chiropractor for hundreds of McKinney families. Whether you\'re a pregnant mom in Stonebridge Ranch, a family in Craig Ranch, or have a child struggling with colic in Prosper-adjacent McKinney, our office is an easy drive down US-75.',
@@ -270,7 +273,7 @@ const locationData: Record<string, LocationData> = {
     metaDescription: 'Plano families choose Trinity Life Chiropractic in Allen for expert prenatal, pediatric, and family chiropractic care. Just 15 min north on US-75. Book your visit.',
     heroHeadline: 'Chiropractor Near Plano, TX',
     heroSubheadline: 'Plano\'s growing families trust Trinity Life for specialized prenatal, pediatric, and nervous system chiropractic care — just minutes north on US-75.',
-    heroImage: 'https://images.unsplash.com/photo-1649692560786-27c52dd9ac1d?ixlib=rb-4.1.0&q=80&w=1920&auto=format&fit=crop',
+    heroImage: '/assets/images/trinity-life-chiropractic-office-allen-texas.webp',
 
     introTitle: 'The Plano-Area Chiropractor Families Recommend',
     introText: 'Plano is home to some of the best schools, parks, and neighborhoods in Texas — and its families deserve equally exceptional healthcare. Trinity Life Chiropractic, located just 15 minutes north in Allen, serves as the trusted neurological chiropractic provider for families across West Plano, East Plano, and everywhere in between. Our specialized focus on prenatal care, pediatric neurology, and whole-family wellness is what sets us apart from general chiropractic offices in the Plano area.',
@@ -362,7 +365,7 @@ const locationData: Record<string, LocationData> = {
     metaDescription: 'Lucas, TX families choose Trinity Life Chiropractic in Allen for specialized prenatal, pediatric, and nervous system care. Just 10 min away. Schedule your visit.',
     heroHeadline: 'Chiropractor Near Lucas, TX',
     heroSubheadline: 'Families in Lucas love the small-town feel — and they love having specialized neurological chiropractic care just 10 minutes away in Allen.',
-    heroImage: 'https://images.unsplash.com/photo-1765947378164-f7bf4fc4784d?ixlib=rb-4.1.0&q=80&w=1920&auto=format&fit=crop',
+    heroImage: '/assets/images/trinity-life-chiropractic-treatment-room.webp',
 
     introTitle: 'The Chiropractor Lucas Families Trust',
     introText: 'Lucas is known for its spacious lots, equestrian lifestyle, and tight-knit community — it\'s the kind of place where families put health and quality of life first. That\'s exactly why so many Lucas families have made Trinity Life Chiropractic their healthcare home. Located just east down Bethany Dr or McDermott Dr in Allen, our office provides the specialized neurological care that active Lucas families need.',
@@ -452,7 +455,7 @@ const locationData: Record<string, LocationData> = {
     metaDescription: 'Fairview, TX families are just 5 minutes from Trinity Life Chiropractic in Allen. Specializing in prenatal, pediatric, and family wellness care. Book today.',
     heroHeadline: 'Chiropractor Near Fairview, TX',
     heroSubheadline: 'Fairview\'s closest specialized prenatal and pediatric chiropractor is right next door in Allen — just 5 minutes away.',
-    heroImage: 'https://images.unsplash.com/photo-1649692560786-27c52dd9ac1d?ixlib=rb-4.1.0&q=80&w=1920&auto=format&fit=crop',
+    heroImage: '/assets/images/trinity-life-chiropractic-office-allen-texas.webp',
 
     introTitle: 'Fairview\'s Neighborhood Chiropractor',
     introText: 'Fairview is a small, close-knit community nestled between Allen and McKinney — and Trinity Life Chiropractic is practically right next door. At just 5 minutes from our Allen office, Fairview families enjoy the shortest commute of any community we serve. Our specialized prenatal, pediatric, and nervous system care is perfectly suited for Fairview\'s family-oriented lifestyle.',
@@ -541,7 +544,7 @@ const locationData: Record<string, LocationData> = {
     metaDescription: 'Parker, TX families trust Trinity Life Chiropractic in Allen for specialized prenatal, pediatric, and family chiropractic care. About 15 min drive. Book today.',
     heroHeadline: 'Chiropractor Near Parker, TX',
     heroSubheadline: 'Parker families seeking specialized prenatal and pediatric chiropractic care find exactly what they need at Trinity Life — just a short drive west in Allen.',
-    heroImage: 'https://images.unsplash.com/photo-1765947378164-f7bf4fc4784d?ixlib=rb-4.1.0&q=80&w=1920&auto=format&fit=crop',
+    heroImage: '/assets/images/trinity-life-chiropractic-treatment-room.webp',
 
     introTitle: 'Specialized Chiropractic Care Near Parker',
     introText: 'The city of Parker is known for its wide-open spaces, one-acre lots, and families who value a natural way of life. Trinity Life Chiropractic in Allen is the perfect match for Parker families who want a holistic, drug-free approach to healthcare. Our office specializes in the exact kind of care that active, nature-loving Parker families need — from prenatal support to pediatric wellness to whole-family nervous system care.',
@@ -631,7 +634,7 @@ const locationData: Record<string, LocationData> = {
     metaDescription: 'Murphy, TX families choose Trinity Life Chiropractic in Allen for expert prenatal, pediatric, and family care. Just 10 min away. Schedule your appointment today.',
     heroHeadline: 'Chiropractor Near Murphy, TX',
     heroSubheadline: 'Murphy families enjoy close-knit community living — and quick access to specialized prenatal and pediatric chiropractic care at Trinity Life in Allen.',
-    heroImage: 'https://images.unsplash.com/photo-1649692560786-27c52dd9ac1d?ixlib=rb-4.1.0&q=80&w=1920&auto=format&fit=crop',
+    heroImage: '/assets/images/trinity-life-chiropractic-office-allen-texas.webp',
 
     introTitle: 'The Go-To Chiropractor for Murphy Families',
     introText: 'Murphy has quickly become one of the most desirable family communities in Collin County — with top-rated schools, safe neighborhoods, and a growing population of young families. These families deserve specialized healthcare, and Trinity Life Chiropractic in Allen provides exactly that. Located just 10 minutes north via FM 544 or US-75, we\'re the prenatal and pediatric chiropractic destination for Murphy parents who want more than a general adjustment.',
@@ -721,7 +724,7 @@ const locationData: Record<string, LocationData> = {
     metaDescription: 'Frisco, TX families drive to Trinity Life Chiropractic in Allen for specialized prenatal, pediatric, and nervous system care. Just 15 min east. Book now.',
     heroHeadline: 'Chiropractor Near Frisco, TX',
     heroSubheadline: 'Frisco families who want more than a general adjustment find specialized prenatal, pediatric, and neurological care at Trinity Life — just 15 minutes east in Allen.',
-    heroImage: 'https://images.unsplash.com/photo-1765947378164-f7bf4fc4784d?ixlib=rb-4.1.0&q=80&w=1920&auto=format&fit=crop',
+    heroImage: '/assets/images/trinity-life-chiropractic-treatment-room.webp',
 
     introTitle: 'The Specialized Chiropractor Frisco Families Trust',
     introText: 'Frisco is one of the fastest-growing cities in America, known for its world-class sports facilities, thriving economy, and vibrant family culture. With rapid growth comes a demand for specialized healthcare — and that\'s where Trinity Life Chiropractic stands out. While Frisco has many chiropractors, families seeking specialized neurological care for pregnancy, infants, and children choose to make the short drive to our Allen office for expertise they can\'t find locally.',
@@ -811,7 +814,7 @@ const locationData: Record<string, LocationData> = {
     metaDescription: 'Richardson, TX families drive to Trinity Life Chiropractic in Allen for specialized prenatal, pediatric, and family care. About 20 min on US-75. Book today.',
     heroHeadline: 'Chiropractor Near Richardson, TX',
     heroSubheadline: 'Richardson families seeking specialized prenatal and pediatric chiropractic care find it at Trinity Life — a straightforward drive north on US-75.',
-    heroImage: 'https://images.unsplash.com/photo-1649692560786-27c52dd9ac1d?ixlib=rb-4.1.0&q=80&w=1920&auto=format&fit=crop',
+    heroImage: '/assets/images/trinity-life-chiropractic-office-allen-texas.webp',
 
     introTitle: 'Specialized Care Worth the Drive from Richardson',
     introText: 'Richardson is an established, diverse city with excellent schools and a strong community identity. Richardson families who are looking for more than general chiropractic — specifically, neurologically focused care for pregnancy, infants, and children — choose Trinity Life Chiropractic in Allen. While we\'re about 20 minutes north on US-75, the specialized expertise our office provides is difficult to find in the Richardson-Plano corridor, making the drive a worthwhile investment in your family\'s health.',

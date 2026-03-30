@@ -34,7 +34,7 @@ export const BlogPage = () => {
       excerpt: "Many parents are surprised to learn that children can benefit from chiropractic adjustments. From birth trauma to learning to walk, childhood is full of physical stress.",
       date: "Oct 12, 2025",
       category: "Pediatric Health",
-      image: "https://images.unsplash.com/photo-1632052999447-e542d08d4f7d?ixlib=rb-4.1.0&q=80&w=800&auto=format&fit=crop",
+      image: "/assets/images/pediatric-chiropractor-infant-care.webp",
       slug: "why-kids-need-chiro"
     },
     {
@@ -42,7 +42,7 @@ export const BlogPage = () => {
       excerpt: "Pregnancy is a time of massive change for your body. Discover how balancing the pelvis can lead to a more comfortable pregnancy and safer delivery.",
       date: "Sep 28, 2025",
       category: "Pregnancy",
-      image: "https://images.unsplash.com/photo-1561742139-4b0210a1894d?ixlib=rb-4.1.0&q=80&w=800&auto=format&fit=crop",
+      image: "/assets/images/pregnancy-chiropractic-adjustment-care.webp",
       slug: "webster-technique-explained"
     },
     {
@@ -50,7 +50,7 @@ export const BlogPage = () => {
       excerpt: "ADHD, sensory processing issues, and anxiety often have a common neurological root. We call this the Perfect Storm, and there is hope.",
       date: "Sep 15, 2025",
       category: "Neurology",
-      image: "https://images.unsplash.com/photo-1725399078928-9e208e7a4cae?ixlib=rb-4.1.0&q=80&w=800&auto=format&fit=crop",
+      image: "/assets/images/insight-nervous-system-scan-hand.webp",
       slug: "perfect-storm-development"
     },
     {
@@ -58,7 +58,7 @@ export const BlogPage = () => {
       excerpt: "Stress puts your nervous system in a chronic state of fight-or-flight. Here are five simple, actionable tips to help your body reset.",
       date: "Aug 30, 2025",
       category: "Wellness",
-      image: "https://images.unsplash.com/photo-1767082090422-2e5aeeba2afe?ixlib=rb-4.1.0&q=80&w=800&auto=format&fit=crop",
+      image: "/assets/images/family-chiropractic-consultation-allen-tx.webp",
       slug: "reduce-stress-daily"
     }
   ];

@@ -4,9 +4,13 @@ import { Baby, Users, Brain, Activity, Plus, CheckCircle, ShieldCheck, Heart } f
 
 
 // Import local assets
-import imgHighFive from '@/assets/0042f13a153888e204d34c19f8fb2b1a8454b463.png';
-import imgChart from '@/assets/b3f48ea3427a35b55e6c4b7f80bebb87b5929149.png';
-import imgBaby from '@/assets/11c918fdd89fdab71e3738ff27a1d42c36311040.png';
+import imgHighFiveObj from '@/assets/images/chiropractor-patient-high-five.webp';
+import imgChartObj from '@/assets/images/chiropractor-nervous-system-education.webp';
+import imgBabyObj from '@/assets/images/pediatric-chiropractor-baby-care.webp';
+const resolveImg = (img: any): string => typeof img === 'object' && img?.src ? img.src : img;
+const imgHighFive = resolveImg(imgHighFiveObj);
+const imgChart = resolveImg(imgChartObj);
+const imgBaby = resolveImg(imgBabyObj);
 
 const ServiceDetailCard = ({ title, description, benefits, icon: Icon, image, link }) => (
   <div className="bg-white rounded-3xl overflow-hidden shadow-sm border border-gray-100 flex flex-col md:flex-row mb-12 last:mb-0 group hover:shadow-xl transition-all duration-300">
@@ -76,7 +80,7 @@ export const ServicesPage = () => {
         "Supports postpartum recovery"
       ],
       icon: Users,
-      image: "https://images.unsplash.com/photo-1561742139-4b0210a1894d?ixlib=rb-4.1.0&q=80&w=1080&auto=format&fit=crop",
+      image: "/assets/images/pregnancy-chiropractic-adjustment-care.webp",
       link: "/pregnancy-chiropractic-care"
     },
     {

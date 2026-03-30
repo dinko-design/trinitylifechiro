@@ -2,7 +2,8 @@ import React from 'react';
 import { motion } from 'motion/react';
 import { User, Award } from 'lucide-react';
 
-import imgChart from '@/assets/b3f48ea3427a35b55e6c4b7f80bebb87b5929149.png';
+import imgChartObj from '@/assets/images/chiropractor-nervous-system-education.webp';
+const imgChart = typeof imgChartObj === 'object' && imgChartObj?.src ? imgChartObj.src : imgChartObj;
 
 export const About = () => {
   return (

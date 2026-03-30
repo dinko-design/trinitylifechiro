@@ -2,6 +2,7 @@
 import { getCollection } from 'astro:content';
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import Breadcrumbs from '@/components/Breadcrumbs.astro';
+import ResponsiveImage from '@/components/ResponsiveImage.astro';
 
 export async function getStaticPaths() {
   const services = await getCollection('services');
@@ -46,7 +47,7 @@ const faqStructuredData = {
     >
       <div class="absolute inset-0 bg-gradient-to-r from-brand-plum-dark/90 to-brand-plum/40 mix-blend-multiply" />
     </div>
-    <img src={data.heroImage} alt={`${data.title} — Trinity Life Chiropractic in Allen, TX`} class="sr-only" loading="eager" />
+    <ResponsiveImage src={data.heroImage} alt={`${data.title} — Trinity Life Chiropractic in Allen, TX`} class="sr-only" loading="eager" sizes="100vw" widths={[640, 1024, 1920]} />
     <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-20">
       <div class="max-w-2xl text-white animate-fade-in-up">
         <div class="flex items-center gap-2 mb-4">
@@ -103,7 +104,7 @@ const faqStructuredData = {
       <div class="flex flex-col lg:flex-row items-center gap-16">
         <div class="lg:w-1/2 order-2 lg:order-1">
           <div class="relative rounded-3xl overflow-hidden shadow-2xl">
-            <img src={data.solutionImage} alt={`${data.title} — ${data.solutionTitle} at Trinity Life Chiropractic`} class="w-full h-full object-cover" loading="lazy" />
+            <ResponsiveImage src={data.solutionImage} alt={`${data.title} — ${data.solutionTitle} at Trinity Life Chiropractic`} class="w-full h-full object-cover" loading="lazy" />
             <div class="absolute inset-0 bg-brand-plum/10" />
           </div>
         </div>

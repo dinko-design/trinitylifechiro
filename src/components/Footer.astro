@@ -1,5 +1,7 @@
 ---
+import { Image } from 'astro:assets';
 import { serviceCategories, serviceAreas, mainNav } from '@/data/navigation';
+import logoWhite from '@/assets/logo-horizontal-white.png';
 
 const currentYear = new Date().getFullYear();
 const allServices = serviceCategories.flatMap(cat => cat.items).slice(0, 5);
@@ -12,13 +14,14 @@ const allServices = serviceCategories.flatMap(cat => cat.items).slice(0, 5);
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
       <!-- Brand -->
       <div class="space-y-6">
-        <img
-          src="/assets/logo-horizontal-white.png"
+        <Image
+          src={logoWhite}
           alt="Trinity Life Chiropractic"
           class="h-11 w-auto opacity-90"
-          width="200"
-          height="44"
+          width={200}
+          height={44}
           loading="lazy"
+          format="webp"
         />
         <p class="text-white/50 leading-relaxed text-sm">
           Neurologically focused chiropractic care tailored for the entire family. Serving Allen, McKinney, Plano, Frisco, and surrounding communities.

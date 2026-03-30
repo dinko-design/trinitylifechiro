@@ -7,7 +7,7 @@ export const CareersPage = () => {
     <div className="pt-24 min-h-screen bg-gray-50">
       <div className="bg-[#564972] text-white py-24 relative overflow-hidden">
         <img 
-            src="https://images.unsplash.com/photo-1758654860024-9e352f70d1f9?ixlib=rb-4.1.0&q=80&w=1920&auto=format&fit=crop" 
+            src="/assets/images/chiropractor-patient-high-five-celebration.webp" 
             alt="Team Meeting" 
             className="absolute inset-0 w-full h-full object-cover opacity-10"
         />

@@ -2,9 +2,13 @@ import React from 'react';
 
 import { motion } from 'motion/react';
 import { Calendar, User, ArrowLeft, Clock, Share2, Tag } from 'lucide-react';
-import imgBaby from '@/assets/11c918fdd89fdab71e3738ff27a1d42c36311040.png';
-import imgSmiling from '@/assets/023fbc767981ef2ecd3fbe4de658a30d5d662501.png';
-import imgChart from '@/assets/b3f48ea3427a35b55e6c4b7f80bebb87b5929149.png';
+import imgBabyObj from '@/assets/images/pediatric-chiropractor-baby-care.webp';
+import imgSmilingObj from '@/assets/images/dr-obrien-smiling-patient-care.webp';
+import imgChartObj from '@/assets/images/chiropractor-nervous-system-education.webp';
+const resolveImg = (img: any): string => typeof img === 'object' && img?.src ? img.src : img;
+const imgBaby = resolveImg(imgBabyObj);
+const imgSmiling = resolveImg(imgSmilingObj);
+const imgChart = resolveImg(imgChartObj);
 
 const blogPosts = {
   'perfect-storm-development': {
@@ -93,7 +97,7 @@ const blogPosts = {
     author: "Dr. Colton O'Brien",
     category: "Pregnancy",
     readTime: "5 min read",
-    image: "https://images.unsplash.com/photo-1561742139-4b0210a1894d?ixlib=rb-4.1.0&q=80&w=1920&auto=format&fit=crop",
+    image: "/assets/images/pregnancy-chiropractic-adjustment-care.webp",
     content: (
       <>
         <p className="lead text-xl text-gray-600 mb-8 font-serif italic">

@@ -7,10 +7,15 @@ import {
 
 
 // Import local assets
-import imgHighFive from '@/assets/0042f13a153888e204d34c19f8fb2b1a8454b463.png';
-import imgSmiling from '@/assets/023fbc767981ef2ecd3fbe4de658a30d5d662501.png';
-import imgChart from '@/assets/b3f48ea3427a35b55e6c4b7f80bebb87b5929149.png';
-import imgBaby from '@/assets/11c918fdd89fdab71e3738ff27a1d42c36311040.png';
+import imgHighFiveObj from '@/assets/images/chiropractor-patient-high-five.webp';
+import imgSmilingObj from '@/assets/images/dr-obrien-smiling-patient-care.webp';
+import imgChartObj from '@/assets/images/chiropractor-nervous-system-education.webp';
+import imgBabyObj from '@/assets/images/pediatric-chiropractor-baby-care.webp';
+const resolveImg = (img: any): string => typeof img === 'object' && img?.src ? img.src : img;
+const imgHighFive = resolveImg(imgHighFiveObj);
+const imgSmiling = resolveImg(imgSmilingObj);
+const imgChart = resolveImg(imgChartObj);
+const imgBaby = resolveImg(imgBabyObj);
 
 // --- Components for the Landing Page Sections ---
 
@@ -73,7 +78,7 @@ const serviceData = {
   'pregnancy-chiropractic-care': {
     title: "Pregnancy Chiropractic",
     subtitle: "Empowering Mothers for a Better Birth Experience",
-    heroImage: "https://images.unsplash.com/photo-1561742139-4b0210a1894d?ixlib=rb-4.1.0&q=80&w=1920&auto=format&fit=crop",
+    heroImage: "/assets/images/pregnancy-chiropractic-adjustment-care.webp",
     
     introTitle: "Is Discomfort Clouding Your Joy?",
     introText: "Pregnancy should be a time of anticipation and happiness, but for many moms, it's overshadowed by sciatica, back pain, and anxiety about labor. Your body is undergoing massive changes, and it needs support to adapt correctly.",
@@ -128,7 +133,7 @@ const serviceData = {
 
     solutionTitle: "Gentle Care for Tiny Spines",
     solutionText: "Our pediatric adjustments are incredibly gentle—using no more pressure than you'd use to check a tomato for ripeness. We focus on removing interference so your child's body can do what it was designed to do: heal and grow.",
-    solutionImage: "https://images.unsplash.com/photo-1632052999447-e542d08d4f7d?ixlib=rb-4.1.0&q=80&w=800&auto=format&fit=crop",
+    solutionImage: "/assets/images/pediatric-chiropractor-infant-care.webp",
 
     benefits: [
       { title: "Boosted Immunity", desc: "A clear nervous system communicates better with the immune system, helping fight off bugs." },
@@ -169,7 +174,7 @@ const serviceData = {
 
     solutionTitle: "The INSiGHT Scan Difference",
     solutionText: "We don't guess—we test. We use NASA-certified technology to measure stress on your nervous system. This includes Thermal scans (organ function), sEMG (energy expenditure), and HRV (adaptability).",
-    solutionImage: "https://images.unsplash.com/photo-1725399078928-9e208e7a4cae?ixlib=rb-4.1.0&q=80&w=800&auto=format&fit=crop",
+    solutionImage: "/assets/images/insight-nervous-system-scan-hand.webp",
 
     benefits: [
       { title: "Visual Proof", desc: "See exactly where stress is stored in your body with easy-to-read color-coded scans." },
@@ -208,7 +213,7 @@ const serviceData = {
     ],
     solutionTitle: "A Culture of Wellness",
     solutionText: "We make it easy and affordable for the whole family to get adjusted. It's not just about back pain; it's about raising a generation of drug-free, healthy kids.",
-    solutionImage: "https://images.unsplash.com/photo-1767082090422-2e5aeeba2afe?ixlib=rb-4.1.0&q=80&w=800&auto=format&fit=crop",
+    solutionImage: "/assets/images/family-chiropractic-consultation-allen-tx.webp",
     benefits: [
         { title: "Convenient Scheduling", desc: "Bring everyone in one slot. We are efficient and family-friendly." },
         { title: "Cost-Effective Plans", desc: "We offer family plans to make wellness care accessible." },
@@ -229,7 +234,7 @@ const serviceData = {
   'kids-chiropractic': {
       title: "Kids & Teens",
       subtitle: "Navigating Growth Spurts and School Stress",
-      heroImage: "https://images.unsplash.com/photo-1594824476967-48c8b964273f?ixlib=rb-4.1.0&q=80&w=1920&auto=format&fit=crop",
+      heroImage: "/assets/images/kids-chiropractic-care-toddler.webp",
       introTitle: "Growing Up is Hard Work",
       introText: "From heavy backpacks to sports injuries and academic pressure, modern childhood is stressful. We help ensure their bodies can adapt to these demands.",
       problems: [
@@ -261,7 +266,7 @@ const serviceData = {
   'wellness-care': {
       title: "Wellness Care",
       subtitle: "Living Life at 100%",
-      heroImage: "https://images.unsplash.com/photo-1760259202854-1e05da21fe29?ixlib=rb-4.1.0&q=80&w=1920&auto=format&fit=crop",
+      heroImage: "/assets/images/wellness-chiropractic-care-service.webp",
       introTitle: "Don't Wait for Pain",
       introText: "You brush your teeth to prevent cavities. Wellness chiropractic is the same concept for your spine and nervous system. Maintain your health rather than trying to recover it.",
       problems: [
@@ -293,7 +298,7 @@ const serviceData = {
   'postpartum-chiropractic': {
       title: "Postpartum Recovery",
       subtitle: "Healing Support for the 'Fourth Trimester'",
-      heroImage: "https://images.unsplash.com/photo-1544126566-47a3e811c5a9?ixlib=rb-4.1.0&q=80&w=1920&auto=format&fit=crop",
+      heroImage: "/assets/images/family-chiropractor-newborn-care-allen-tx.webp",
       introTitle: "You've Birthed the Baby, Now Let's Heal the Mom",
       introText: "The postpartum period is physically demanding. You are recovering from birth while caring for a newborn 24/7. Your body needs support to realign, heal, and adapt to the new stresses of motherhood.",
       problems: [
@@ -325,7 +330,7 @@ const serviceData = {
   'adhd-sensory-processing': {
       title: "ADHD & Sensory Care",
       subtitle: "Quieting the Storm Inside",
-      heroImage: "https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?ixlib=rb-4.1.0&q=80&w=1920&auto=format&fit=crop",
+      heroImage: "/assets/images/pediatric-chiropractor-toddler-adjustment.webp",
       introTitle: "Beyond Behavior Management",
       introText: "When a child struggles with focus, hyperactivity, or sensory overload, it's often a sign of a 'noisy' nervous system. We don't try to force better behavior; we help calm the internal storm so they can regulate themselves.",
       problems: [
@@ -368,7 +373,7 @@ const serviceData = {
       ],
       solutionTitle: "Gentle Unwinding",
       solutionText: "The vagus nerve, which controls digestion, exits right at the top of the neck. Birth strain can irritate this nerve. We use feather-light contacts to release this tension, often providing immediate relief for digestive distress.",
-      solutionImage: "https://images.unsplash.com/photo-1555252333-9f8e92e65df9?ixlib=rb-4.1.0&q=80&w=800&auto=format&fit=crop",
+      solutionImage: "/assets/images/baby-chiropractic-adjustment-smiling.webp",
       benefits: [
           { title: "Peaceful Sleep", desc: "No more waking up screaming in pain every hour." },
           { title: "Happy Digestion", desc: "Reduced gas, constipation, and spit-up." },
@@ -389,7 +394,7 @@ const serviceData = {
   'ear-infections-immunity': {
       title: "Ear Infections & Immunity",
       subtitle: "Breaking the Antibiotic Cycle",
-      heroImage: "https://images.unsplash.com/photo-1516627145497-ae6968895b74?ixlib=rb-4.1.0&q=80&w=1920&auto=format&fit=crop",
+      heroImage: "/assets/images/gentle-pediatric-chiropractic-hands.webp",
       introTitle: "Sick of Being Sick?",
       introText: "Chronic ear infections and constant colds are a sign that the body isn't draining or defending itself properly. Before opting for tubes or another round of antibiotics, consider the mechanical cause.",
       problems: [

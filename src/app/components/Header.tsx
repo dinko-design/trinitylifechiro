@@ -3,7 +3,8 @@ import { Menu, X, Phone, Facebook, Instagram, ChevronDown } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { serviceCategories, serviceAreas, mainNav } from '@/data/navigation';
 
-import logoHorizontal from '@/assets/logo-horizontal.png';
+import logoHorizontalImg from '@/assets/logo-horizontal.png';
+const logoHorizontal = typeof logoHorizontalImg === 'object' && logoHorizontalImg?.src ? logoHorizontalImg.src : logoHorizontalImg;
 
 export const Header = () => {
   const [isMobileOpen, setIsMobileOpen] = useState(false);
