@@ -125,22 +125,19 @@ if (structuredData) {
       <script type="application/ld+json" set:html={JSON.stringify(item)} />
     ))}
 
-    <!-- Google Tag Manager dataLayer init -->
+    <!-- Google tag (gtag.js) -->
+    <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-LW0FYTT7FK"></script>
     <script is:inline>
       window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-LW0FYTT7FK');
     </script>
 
     <!--
       === AD PLATFORM TAGS ===
-      Paste your Google Tag (gtag.js), Meta Pixel, or Microsoft UET tag below.
       Conversion events (form_submission, Lead) are already wired up in the contact form.
-
-      GOOGLE TAG MANAGER example:
-      <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-      <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XXXXXXXXXX');</script>
-
-      META PIXEL example:
-      <script>!function(f,b,e,v,n,t,s){...}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','PIXEL_ID');fbq('track','PageView');</script>
+      Add Meta Pixel, Microsoft UET, or other tags below.
     -->
   </head>
   <body class="min-h-screen bg-white font-body text-gray-900">
