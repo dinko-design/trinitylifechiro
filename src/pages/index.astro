@@ -13,7 +13,7 @@ import { Contact } from '@/app/components/Contact';
   description="Neurologically focused prenatal, pediatric, and family chiropractic care in Allen, Texas. Webster Technique certified. Serving Allen, McKinney, Plano, Frisco & surrounding areas."
   ogImage="/assets/og-default.png"
 >
-  <Hero client:load />
+  <Hero client:only="react" />
   <About client:visible />
   <Services client:visible />
   <Process client:visible />

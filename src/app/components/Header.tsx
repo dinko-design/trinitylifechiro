@@ -30,10 +30,10 @@ export const Header = () => {
       <div className={`bg-brand-plum text-white py-2 px-4 transition-all duration-300 ${scrolled ? 'py-1 text-xs' : 'text-sm'}`}>
         <div className="max-w-7xl mx-auto flex justify-between items-center">
           <div className="flex gap-4">
-            <a href="https://instagram.com" target="_blank" rel="noreferrer" className="hover:text-brand-gold transition-colors">
+            <a href="https://www.instagram.com/trinitylifechiro/" target="_blank" rel="noreferrer" className="hover:text-brand-gold transition-colors" aria-label="Instagram">
               <Instagram className="w-4 h-4" />
             </a>
-            <a href="https://facebook.com" target="_blank" rel="noreferrer" className="hover:text-brand-gold transition-colors">
+            <a href="https://www.facebook.com/trinitylifechiro/" target="_blank" rel="noreferrer" className="hover:text-brand-gold transition-colors" aria-label="Facebook">
               <Facebook className="w-4 h-4" />
             </a>
           </div>
@@ -52,6 +52,8 @@ export const Header = () => {
               <img
                 src={logoHorizontal}
                 alt="Trinity Life Chiropractic"
+                width={267}
+                height={56}
                 className={`w-auto object-contain transition-all duration-300 ${scrolled ? 'h-11' : 'h-14'}`}
               />
             </a>
@@ -132,7 +134,7 @@ export const Header = () => {
                 href="https://trinitylifechiro.janeapp.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="ml-3 bg-brand-gold text-white px-6 py-2.5 rounded-full font-bold text-sm hover:bg-brand-gold-dark transition-all shadow-md shadow-brand-gold/20 hover:shadow-lg hover:shadow-brand-gold/30 tracking-wide"
+                className="ml-3 bg-[#8a7347] text-white px-6 py-2.5 rounded-full font-bold text-sm hover:bg-brand-gold-dark transition-all shadow-md shadow-brand-gold/20 hover:shadow-lg hover:shadow-brand-gold/30 tracking-wide"
               >
                 Schedule Here
               </a>
@@ -142,6 +144,7 @@ export const Header = () => {
             <button
               onClick={() => setIsMobileOpen(!isMobileOpen)}
               className="lg:hidden text-brand-plum hover:text-brand-gold focus:outline-none p-2"
+              aria-label={isMobileOpen ? 'Close menu' : 'Open menu'}
             >
               {isMobileOpen ? <X className="w-7 h-7" /> : <Menu className="w-7 h-7" />}
             </button>

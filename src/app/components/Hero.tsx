@@ -64,7 +64,7 @@ export const Hero = () => {
               href="https://trinitylifechiro.janeapp.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-brand-gold hover:bg-brand-gold-dark text-white px-8 py-4 rounded-full font-bold text-lg transition-all hover:scale-[1.03] shadow-xl shadow-black/20 flex items-center justify-center gap-2.5 tracking-wide"
+              className="bg-[#8a7347] hover:bg-brand-gold-dark text-white px-8 py-4 rounded-full font-bold text-lg transition-all hover:scale-[1.03] shadow-xl shadow-black/20 flex items-center justify-center gap-2.5 tracking-wide"
             >
               Book Appointment <ArrowRight className="w-5 h-5" />
             </a>
