@@ -31,6 +31,7 @@ export function ContactForm() {
     phone: '',
     message: '',
     service: '',
+    website: '', // honeypot
   });
 
   // Capture and persist tracking params across page navigations
@@ -97,7 +98,7 @@ export function ContactForm() {
 
       if (data.success) {
         setStatus('success');
-        setFormData({ name: '', email: '', phone: '', message: '', service: '' });
+        setFormData({ name: '', email: '', phone: '', message: '', service: '', website: '' });
         fireConversionEvents();
       } else {
         setStatus('error');
@@ -127,11 +128,23 @@ export function ContactForm() {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-5">
+      {/* Honeypot — hidden from humans, bots fill it */}
+      <div className="absolute opacity-0 -z-10" aria-hidden="true" tabIndex={-1}>
+        <input
+          type="text"
+          name="website"
+          autoComplete="off"
+          tabIndex={-1}
+          value={formData.website || ''}
+          onChange={(e) => setFormData(prev => ({ ...prev, website: e.target.value }))}
+        />
+      </div>
       <div>
         <label htmlFor="cf-name" className="block text-sm font-semibold text-gray-700 mb-1.5">Name <span className="text-red-400">*</span></label>
         <input
           id="cf-name"
           required
+          maxLength={100}
           value={formData.name}
           onChange={(e) => setFormData(prev => ({ ...prev, name: e.target.value }))}
           placeholder="Your full name"
@@ -146,6 +159,7 @@ export function ContactForm() {
             id="cf-email"
             type="email"
             required
+            maxLength={254}
             value={formData.email}
             onChange={(e) => setFormData(prev => ({ ...prev, email: e.target.value }))}
             placeholder="you@example.com"
@@ -157,6 +171,7 @@ export function ContactForm() {
           <input
             id="cf-phone"
             type="tel"
+            maxLength={20}
             value={formData.phone}
             onChange={(e) => setFormData(prev => ({ ...prev, phone: e.target.value }))}
             placeholder="(555) 123-4567"
@@ -184,6 +199,7 @@ export function ContactForm() {
         <label htmlFor="cf-message" className="block text-sm font-semibold text-gray-700 mb-1.5">Message</label>
         <textarea
           id="cf-message"
+          maxLength={2000}
           value={formData.message}
           onChange={(e) => setFormData(prev => ({ ...prev, message: e.target.value }))}
           placeholder="Tell us how we can help..."
