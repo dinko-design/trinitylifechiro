@@ -4,11 +4,11 @@ const isProd = import.meta.env.PROD;
 
 export default config({
   storage: isProd
-    ? {
-        kind: 'github',
-        repo: { owner: 'dinko-design', name: 'trinitylifechiro' },
-      }
+    ? { kind: 'cloud' }
     : { kind: 'local' },
+  cloud: {
+    project: 'dinko-design/trinitylifechiro',
+  },
   ui: {
     brand: { name: 'Trinity Life Chiropractic' },
   },
