@@ -24,6 +24,8 @@ export const serviceCategories = [
   {
     label: 'Conditions We Help',
     items: [
+      { name: 'Back Pain Relief', href: '/back-pain-chiropractic' },
+      { name: 'Knee Pain Relief', href: '/knee-pain-chiropractic' },
       { name: 'ADHD & Sensory Processing', href: '/adhd-sensory-processing' },
       { name: 'Colic & Reflux Relief', href: '/colic-reflux-relief' },
       { name: 'Ear Infections & Immunity', href: '/ear-infections-immunity' },

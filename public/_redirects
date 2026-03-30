@@ -1,0 +1,29 @@
+# Page redirects (old WordPress → new Astro)
+/what-to-expect/              /process                          301
+/contact-us/                  /#contact                         301
+/about-us/                    /team                             301
+/our-approach/                /process                          301
+/wellness-chiropractic-services/  /wellness-care                301
+/nervous-system-chiropractic-care/  /nervous-system-care        301
+/kid-chiropractic-care/       /kids-chiropractic                301
+/family-chiropractic-care/    /family-chiropractic              301
+/pediatric-chiropractor-services-2/  /pediatric-chiropractor-services  301
+/exam-special/                /services                         301
+/category/uncategorized/      /blog                             301
+
+# Old service pages → new slugs
+/expert-back-pain-chiropractic-in-allen-tx/   /back-pain-chiropractic    301
+/expert-knee-pain-chiropractic-in-allen-tx/   /knee-pain-chiropractic    301
+
+# Blog post redirects (WordPress date-based → new)
+/2024/08/07/the-benefits-of-prenatal-chiropractic/                          /blog/webster-technique-explained    301
+/2025/05/21/chiropractic-care-kids-allen-tx/                                /blog/why-kids-need-chiro            301
+/2025/05/21/first-chiropractic-visit-allen-tx/                              /process                             301
+/2025/05/21/chiropractic-care-allen-tx-guide/                               /services                            301
+/2025/06/30/chiropractic-care-athletes-allen-tx/                            /wellness-care                       301
+/2025/08/27/prenatal-postpartum-chiropractic-allen-tx/                      /pregnancy-chiropractic-care          301
+/2025/09/26/see-a-chiropractor-each-trimester/                              /pregnancy-chiropractic-care          301
+/2025/09/26/chiropractic-care-and-common-pregnancy-discomforts/             /pregnancy-chiropractic-care          301
+/2026/01/12/chiropractic-care-in-allen-a-complete-guide-to-pain-relief-and-mobility/  /services                  301
+/2026/02/02/what-makes-a-chiropractic-clinic-the-best-in-allen/             /team                                301
+/2026/03/09/how-to-choose-the-best-chiropractor-in-allen-for-your-family/   /team                                301
