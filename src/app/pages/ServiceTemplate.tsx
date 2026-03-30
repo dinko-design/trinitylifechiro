@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { 
-  Baby, Users, Brain, Activity, CheckCircle, Heart, ShieldCheck, 
-  ChevronDown, ChevronUp, Star, Calendar, ArrowRight, Info 
+  Baby, Users, Brain, Activity, CheckCircle, Heart, ShieldCheck,
+  ChevronDown, ChevronUp, Star, Calendar, ArrowRight, Info
 } from 'lucide-react';
+import { getBookingUrl } from '@/data/booking';
 
 
 // Import local assets
@@ -463,10 +464,11 @@ export const ServiceTemplate = ({ slug: propSlug }: { slug?: string }) => {
               {data.subtitle}
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <a 
-                href="https://trinitylifechiro.janeapp.com" 
-                target="_blank" 
+              <a
+                href={getBookingUrl('service_page', 'service_cta')}
+                target="_blank"
                 rel="noopener noreferrer"
+                data-track="book-appointment"
                 className="bg-[#a68d60] text-white px-8 py-4 rounded-full font-bold hover:bg-[#8e7852] transition-colors shadow-lg flex items-center justify-center gap-2"
               >
                 {data.cta} <ArrowRight className="w-5 h-5" />
@@ -608,10 +610,11 @@ export const ServiceTemplate = ({ slug: propSlug }: { slug?: string }) => {
             Appointments are filling up fast. Take the first step towards a healthier future today.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-             <a 
-              href="https://trinitylifechiro.janeapp.com" 
-              target="_blank" 
+             <a
+              href={getBookingUrl('service_page', 'service_final_cta')}
+              target="_blank"
               rel="noopener noreferrer"
+              data-track="book-appointment"
               className="inline-flex items-center justify-center bg-[#a68d60] text-white px-10 py-5 rounded-full font-bold text-lg hover:bg-[#8e7852] transition-colors shadow-2xl transform hover:-translate-y-1"
             >
               <Calendar className="w-6 h-6 mr-3" />

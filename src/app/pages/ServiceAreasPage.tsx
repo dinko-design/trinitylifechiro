@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'motion/react';
 import { MapPin, ArrowRight, Phone, Calendar, CheckCircle, Car, Clock, Users, Baby, Brain } from 'lucide-react';
+import { getBookingUrl } from '@/data/booking';
 
 
 import imgSmilingObj from '@/assets/images/dr-obrien-smiling-patient-care.webp';
@@ -122,9 +123,10 @@ export const ServiceAreasPage = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="https://trinitylifechiro.janeapp.com"
+                href={getBookingUrl('locations_page', 'locations_hero_cta')}
                 target="_blank"
                 rel="noopener noreferrer"
+                data-track="book-appointment"
                 className="bg-[#a68d60] text-white px-8 py-4 rounded-full font-bold hover:bg-[#8e7852] transition-colors shadow-lg inline-flex items-center justify-center gap-2"
               >
                 Schedule Your Visit <ArrowRight className="w-5 h-5" />
@@ -308,9 +310,10 @@ export const ServiceAreasPage = () => {
             </div>
             <div className="flex flex-col sm:flex-row gap-4">
               <a
-                href="https://trinitylifechiro.janeapp.com"
+                href={getBookingUrl('locations_page', 'locations_office_cta')}
                 target="_blank"
                 rel="noopener noreferrer"
+                data-track="book-appointment"
                 className="bg-[#a68d60] text-white px-8 py-4 rounded-full font-bold hover:bg-[#8e7852] transition-colors shadow-lg inline-flex items-center justify-center gap-2 whitespace-nowrap"
               >
                 <Calendar className="w-5 h-5" /> Book Online
@@ -377,9 +380,10 @@ export const ServiceAreasPage = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
-              href="https://trinitylifechiro.janeapp.com"
+              href={getBookingUrl('locations_page', 'locations_final_cta')}
               target="_blank"
               rel="noopener noreferrer"
+              data-track="book-appointment"
               className="inline-flex items-center justify-center bg-[#a68d60] text-white px-10 py-5 rounded-full font-bold text-lg hover:bg-[#8e7852] transition-colors shadow-2xl transform hover:-translate-y-1"
             >
               <Calendar className="w-6 h-6 mr-3" />

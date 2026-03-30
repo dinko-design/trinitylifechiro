@@ -1,5 +1,5 @@
 import React from 'react';
-import { Facebook, Instagram, Mail } from 'lucide-react';
+import { Facebook, Instagram } from 'lucide-react';
 
 import logoWhite from '@/assets/logo-horizontal-white.png';
 
@@ -27,9 +27,6 @@ export const Footer = () => {
               </a>
               <a href="#" className="w-10 h-10 rounded-full bg-white/8 flex items-center justify-center hover:bg-brand-gold transition-colors">
                 <Instagram className="w-4 h-4" />
-              </a>
-              <a href="mailto:drobrien@trinitylifechiro.com" className="w-10 h-10 rounded-full bg-white/8 flex items-center justify-center hover:bg-brand-gold transition-colors">
-                <Mail className="w-4 h-4" />
               </a>
             </div>
           </div>
@@ -65,7 +62,7 @@ export const Footer = () => {
               <li>301 N Allen Dr</li>
               <li>Allen, TX 75013</li>
               <li><a href="tel:2145097744" className="hover:text-white transition-colors">(214) 509-7744</a></li>
-              <li><a href="mailto:drobrien@trinitylifechiro.com" className="hover:text-white transition-colors">drobrien@trinitylifechiro.com</a></li>
+              <li><a href="/#contact" className="hover:text-white transition-colors">Contact Us</a></li>
             </ul>
           </div>
         </div>

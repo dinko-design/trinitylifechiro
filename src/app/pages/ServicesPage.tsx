@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'motion/react';
 import { Baby, Users, Brain, Activity, Plus, CheckCircle, ShieldCheck, Heart } from 'lucide-react';
+import { getBookingUrl } from '@/data/booking';
 
 
 // Import local assets
@@ -43,7 +44,7 @@ const ServiceDetailCard = ({ title, description, benefits, icon: Icon, image, li
         <a href={link} className="inline-flex items-center justify-center px-6 py-3 border-2 border-[#564972] text-base font-medium rounded-full text-[#564972] hover:bg-[#564972] hover:text-white transition-all">
           Learn More
         </a>
-        <a href="https://trinitylifechiro.janeapp.com" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-full shadow-sm text-white bg-[#a68d60] hover:bg-[#8e7852] transition-all">
+        <a href={getBookingUrl('services_page', 'services_cta')} target="_blank" rel="noopener noreferrer" data-track="book-appointment" className="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-full shadow-sm text-white bg-[#a68d60] hover:bg-[#8e7852] transition-all">
           Book Appointment
         </a>
       </div>

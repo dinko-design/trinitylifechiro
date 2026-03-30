@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Send, CheckCircle, AlertCircle, Loader2 } from 'lucide-react';
+import { Send, AlertCircle, Loader2 } from 'lucide-react';
 
 const SERVICE_OPTIONS = [
   'Pregnancy Chiropractic (Webster)',
@@ -20,7 +20,7 @@ const TRACKING_PARAMS = [
   'gclid', 'msclkid', 'fbclid',
 ] as const;
 
-type FormStatus = 'idle' | 'submitting' | 'success' | 'error';
+type FormStatus = 'idle' | 'submitting' | 'error';
 
 export function ContactForm() {
   const [status, setStatus] = useState<FormStatus>('idle');
@@ -97,9 +97,10 @@ export function ContactForm() {
       const data = await response.json();
 
       if (data.success) {
-        setStatus('success');
-        setFormData({ name: '', email: '', phone: '', message: '', service: '', website: '' });
         fireConversionEvents();
+        setTimeout(() => {
+          window.location.href = '/thank-you';
+        }, 500);
       } else {
         setStatus('error');
         setErrorMessage(data.error || 'Something went wrong.');
@@ -109,22 +110,6 @@ export function ContactForm() {
       setErrorMessage('Network error. Please try again.');
     }
   };
-
-  if (status === 'success') {
-    return (
-      <div className="bg-green-50 border border-green-200 rounded-2xl p-8 text-center">
-        <CheckCircle className="w-12 h-12 text-green-500 mx-auto mb-4" />
-        <h3 className="font-display text-xl font-bold text-gray-900 mb-2">Message Sent!</h3>
-        <p className="text-gray-600 mb-4">Thank you for reaching out. We'll get back to you within 1 business day.</p>
-        <button
-          onClick={() => setStatus('idle')}
-          className="text-brand-gold font-semibold hover:underline"
-        >
-          Send another message
-        </button>
-      </div>
-    );
-  }
 
   return (
     <form onSubmit={handleSubmit} className="space-y-5">

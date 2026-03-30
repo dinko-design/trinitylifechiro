@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'motion/react';
 import { ClipboardList, ScanLine, Activity, FileText } from 'lucide-react';
+import { getBookingUrl } from '@/data/booking';
 
 export const Process = () => {
   const steps = [
@@ -96,9 +97,10 @@ export const Process = () => {
               Book your initial exam online. Appointments are highly recommended as we are closed on Wednesdays and weekends.
             </p>
             <a
-              href="https://trinitylifechiro.janeapp.com"
+              href={getBookingUrl('process', 'process_cta')}
               target="_blank"
               rel="noopener noreferrer"
+              data-track="book-appointment"
               className="inline-block bg-brand-gold hover:bg-brand-gold-dark text-white px-8 py-3.5 rounded-full font-bold transition-all hover:scale-[1.03] shadow-lg shadow-black/20 tracking-wide"
             >
               Schedule Initial Exam

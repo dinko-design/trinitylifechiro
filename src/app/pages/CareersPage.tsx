@@ -67,8 +67,8 @@ export const CareersPage = () => {
           <p className="text-gray-600 mb-8 max-w-lg mx-auto">
             We love meeting great people. If you think you'd be a perfect fit for our culture, send us your resume and tell us why.
           </p>
-          <a href="mailto:drobrien@trinitylifechiro.com" className="bg-[#a68d60] text-white px-8 py-3 rounded-full font-bold hover:bg-[#8e7852] transition-colors inline-block">
-            Email Us
+          <a href="/#contact" className="bg-[#a68d60] text-white px-8 py-3 rounded-full font-bold hover:bg-[#8e7852] transition-colors inline-block">
+            Contact Us
           </a>
         </div>
       </div>

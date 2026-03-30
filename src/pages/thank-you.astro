@@ -1,0 +1,50 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Thank You | Trinity Life Chiropractic"
+  description="Thank you for contacting Trinity Life Chiropractic. We'll get back to you within 1 business day."
+  noindex={true}
+>
+  <section class="flex min-h-[70vh] items-center justify-center px-4 py-24">
+    <div class="text-center max-w-lg">
+      <div class="mx-auto mb-6 flex h-20 w-20 items-center justify-center rounded-full bg-brand-plum/10">
+        <svg class="h-10 w-10 text-brand-plum" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+        </svg>
+      </div>
+      <h1 class="font-display text-3xl md:text-4xl font-bold text-gray-900 mb-4 tracking-tight">
+        Thank You!
+      </h1>
+      <p class="text-lg text-gray-600 mb-10">
+        We've received your message and will get back to you within 1 business day. In the meantime, feel free to schedule your first appointment online.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a
+          href="https://trinitylifechiro.janeapp.com?utm_source=thank_you&utm_medium=cta&utm_campaign=post_conversion_cta"
+          target="_blank"
+          rel="noopener noreferrer"
+          data-track="book-appointment"
+          class="inline-flex items-center justify-center rounded-lg bg-brand-plum px-6 py-3 text-white font-semibold shadow-md transition hover:bg-brand-plum-dark"
+        >
+          Book Appointment
+        </a>
+        <a
+          href="/"
+          class="inline-flex items-center justify-center rounded-lg border-2 border-brand-gold px-6 py-3 text-brand-gold font-semibold transition hover:bg-brand-gold hover:text-white"
+        >
+          Back to Home
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <script is:inline>
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      'event': 'form_conversion',
+      'conversion_type': 'contact_form'
+    });
+  </script>
+</BaseLayout>

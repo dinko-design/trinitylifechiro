@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Menu, X, Phone, Facebook, Instagram, ChevronDown } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { serviceCategories, serviceAreas, mainNav } from '@/data/navigation';
+import { getBookingUrl } from '@/data/booking';
 
 import logoHorizontalImg from '@/assets/logo-horizontal.png';
 const logoHorizontal = typeof logoHorizontalImg === 'object' && logoHorizontalImg?.src ? logoHorizontalImg.src : logoHorizontalImg;
@@ -131,9 +132,10 @@ export const Header = () => {
               ))}
 
               <a
-                href="https://trinitylifechiro.janeapp.com"
+                href={getBookingUrl('header', 'nav_cta')}
                 target="_blank"
                 rel="noopener noreferrer"
+                data-track="book-appointment"
                 className="ml-3 bg-[#8a7347] text-white px-6 py-2.5 rounded-full font-bold text-sm hover:bg-brand-gold-dark transition-all shadow-md shadow-brand-gold/20 hover:shadow-lg hover:shadow-brand-gold/30 tracking-wide"
               >
                 Schedule Here
@@ -232,9 +234,10 @@ export const Header = () => {
 
                 <div className="pt-4">
                   <a
-                    href="https://trinitylifechiro.janeapp.com"
+                    href={getBookingUrl('header', 'nav_cta')}
                     target="_blank"
                     rel="noopener noreferrer"
+                    data-track="book-appointment"
                     className="block w-full text-center bg-brand-gold text-white px-4 py-4 rounded-xl font-bold hover:bg-brand-gold-dark transition-colors"
                   >
                     Schedule Here

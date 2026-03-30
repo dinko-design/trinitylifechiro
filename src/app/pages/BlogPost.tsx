@@ -2,6 +2,7 @@ import React from 'react';
 
 import { motion } from 'motion/react';
 import { Calendar, User, ArrowLeft, Clock, Share2, Tag } from 'lucide-react';
+import { getBookingUrl } from '@/data/booking';
 import imgBabyObj from '@/assets/images/pediatric-chiropractor-baby-care.webp';
 import imgSmilingObj from '@/assets/images/dr-obrien-smiling-patient-care.webp';
 import imgChartObj from '@/assets/images/chiropractor-nervous-system-education.webp';
@@ -234,10 +235,11 @@ export const BlogPost = ({ slug: propSlug }: { slug?: string }) => {
                     <p className="text-gray-600 mb-8 max-w-2xl mx-auto">
                         If this article resonated with you, we'd love to help you explore how neurologically based care can help your family thrive.
                     </p>
-                    <a 
-                        href="https://trinitylifechiro.janeapp.com" 
-                        target="_blank" 
+                    <a
+                        href={getBookingUrl('blog', 'blog_cta')}
+                        target="_blank"
                         rel="noopener noreferrer"
+                        data-track="book-appointment"
                         className="inline-block bg-[#a68d60] text-white px-8 py-4 rounded-full font-bold hover:bg-[#8e7852] transition-colors shadow-lg"
                     >
                         Book a Consultation

@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'motion/react';
 import { ArrowRight, ChevronDown } from 'lucide-react';
+import { getBookingUrl } from '@/data/booking';
 import imgHighFiveObj from '@/assets/images/chiropractor-patient-high-five.webp';
 const imgHighFive = typeof imgHighFiveObj === 'object' && imgHighFiveObj?.src ? imgHighFiveObj.src : imgHighFiveObj;
 
@@ -61,9 +62,10 @@ export const Hero = () => {
             className="flex flex-col sm:flex-row gap-4"
           >
             <a
-              href="https://trinitylifechiro.janeapp.com"
+              href={getBookingUrl('hero', 'hero_cta')}
               target="_blank"
               rel="noopener noreferrer"
+              data-track="book-appointment"
               className="bg-[#8a7347] hover:bg-brand-gold-dark text-white px-8 py-4 rounded-full font-bold text-lg transition-all hover:scale-[1.03] shadow-xl shadow-black/20 flex items-center justify-center gap-2.5 tracking-wide"
             >
               Book Appointment <ArrowRight className="w-5 h-5" />
